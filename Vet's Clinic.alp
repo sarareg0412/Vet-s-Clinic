@@ -7,7 +7,7 @@
 <AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.10.202202091718" AlpVersion="8.7.3">
 <Model>
 	<Id>1666865999287</Id>
-	<Name><![CDATA[Vet's Clinic_new]]></Name>
+	<Name><![CDATA[Vet's Clinic]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[vet_s_clinic]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
@@ -112,8 +112,23 @@
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1671722761189</Id>
-					<Name><![CDATA[timeoutPatients]]></Name>
-					<X>920</X><Y>140</Y>
+					<Name><![CDATA[timeoutEmergencyPatient]]></Name>
+					<X>920</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1671793670889</Id>
+					<Name><![CDATA[newPatientsDeclined]]></Name>
+					<X>920</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -130,7 +145,7 @@
 				<Connector>
 					<Id>1667570417112</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>619.11</X><Y>979.523</Y>
+					<X>569.11</X><Y>979.523</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -148,7 +163,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToSevereRoom]]></ItemName>
+						<ItemName><![CDATA[moveToVetRoom]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -163,7 +178,7 @@
 				<Connector>
 					<Id>1667570689079</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>939.136</X><Y>629.054</Y>
+					<X>899.136</X><Y>669.054</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -196,7 +211,7 @@
 				<Connector>
 					<Id>1667570706534</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>979.375</X><Y>629.054</Y>
+					<X>939.375</X><Y>669.054</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -223,13 +238,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>120</Y></Point>
+						<Point><X>50</X><Y>80</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1667924238167</Id>
 					<Name><![CDATA[connector21]]></Name>
-					<X>1020</X><Y>870</Y>
+					<X>900</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -247,7 +262,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[releaseDoc]]></ItemName>
+						<ItemName><![CDATA[releaseDoc1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -256,13 +271,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-90</X><Y>0</Y></Point>
+						<Point><X>-50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1667924281455</Id>
 					<Name><![CDATA[connector24]]></Name>
-					<X>1359.185</X><Y>869.265</Y>
+					<X>1209.185</X><Y>869.265</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -275,6 +290,109 @@
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
 						<ClassName><![CDATA[Release]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveToExit1]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1667924292109</Id>
+					<Name><![CDATA[connector25]]></Name>
+					<X>1319.807</X><Y>869.982</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[sinkPatient1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[releaseDoc2]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Release]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1667924183680</Id>
+					<Name><![CDATA[connector20]]></Name>
+					<X>809.936</X><Y>869.166</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[releaseDoc1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Release]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveToHospitalization]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-30</X><Y>0</Y></Point>
+						<Point><X>-30</X><Y>-60</Y></Point>
+						<Point><X>690</X><Y>-60</Y></Point>
+						<Point><X>690</X><Y>-110</Y></Point>
+						<Point><X>650</X><Y>-110</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1668674079000</Id>
+					<Name><![CDATA[connector9]]></Name>
+					<X>949.7090000000001</X><Y>1109.729</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[sinkPatient]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -293,112 +411,9 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1667924292109</Id>
-					<Name><![CDATA[connector25]]></Name>
-					<X>1499.807</X><Y>869.982</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sinkPatientHome]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Sink]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[releaseDoc2]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Release]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-100</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1667924183680</Id>
-					<Name><![CDATA[connector20]]></Name>
-					<X>889.9359999999999</X><Y>869.166</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[releaseDoc]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Release]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToHospital]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-70</X><Y>0</Y></Point>
-						<Point><X>-70</X><Y>-60</Y></Point>
-						<Point><X>690</X><Y>-60</Y></Point>
-						<Point><X>690</X><Y>-120</Y></Point>
-						<Point><X>650</X><Y>-120</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1668674079000</Id>
-					<Name><![CDATA[connector9]]></Name>
-					<X>1069.709</X><Y>1109.729</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sinkPatient]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Sink]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToExit1]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-110</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1668682431913</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>1330</X><Y>610</Y>
+					<X>1280</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -431,7 +446,7 @@
 				<Connector>
 					<Id>1671703771266</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>510</X><Y>920</Y>
+					<X>460</X><Y>920</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -439,7 +454,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToSevereRoom]]></ItemName>
+						<ItemName><![CDATA[moveToVetRoom]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -458,13 +473,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-50</X><Y>40</Y></Point>
+						<Point><X>-60</X><Y>40</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671703771282</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>440</X><Y>960</Y>
+					<X>380</X><Y>960</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -482,7 +497,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seizeDoctor]]></ItemName>
+						<ItemName><![CDATA[seizeDocForVisit]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -491,13 +506,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-150</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>-30</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671704012312</Id>
 					<Name><![CDATA[connector14]]></Name>
-					<X>510</X><Y>1030</Y>
+					<X>460</X><Y>1030</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -505,7 +520,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToRegRoom]]></ItemName>
+						<ItemName><![CDATA[moveToAssistantRoom]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -524,13 +539,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>-60</Y></Point>
+						<Point><X>-70</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671704064300</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>550</X><Y>1030</Y>
+					<X>500</X><Y>1030</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -538,7 +553,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToRegRoom]]></ItemName>
+						<ItemName><![CDATA[moveToAssistantRoom]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -563,7 +578,7 @@
 				<Connector>
 					<Id>1671705442970</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>840</X><Y>630</Y>
+					<X>800</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -590,13 +605,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>120</Y></Point>
+						<Point><X>-40</X><Y>70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671705525599</Id>
 					<Name><![CDATA[connector18]]></Name>
-					<X>1030</X><Y>750</Y>
+					<X>990</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -623,13 +638,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-230</X><Y>10</Y></Point>
+						<Point><X>-240</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671707572629</Id>
 					<Name><![CDATA[connector1]]></Name>
-					<X>790</X><Y>750</Y>
+					<X>740</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -647,7 +662,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isEmergency]]></ItemName>
+						<ItemName><![CDATA[isEmergency1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -656,13 +671,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>230</Y></Point>
+						<Point><X>-40</X><Y>240</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671707610554</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>660</X><Y>980</Y>
+					<X>610</X><Y>980</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -680,7 +695,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isEmergency]]></ItemName>
+						<ItemName><![CDATA[isEmergency1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -689,13 +704,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671707770329</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>810</X><Y>1110</Y>
+					<X>760</X><Y>1110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -703,7 +718,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[releaseDoctor]]></ItemName>
+						<ItemName><![CDATA[releaseDoc]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -713,7 +728,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isEmergency]]></ItemName>
+						<ItemName><![CDATA[isEmergency1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -722,13 +737,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>-120</Y></Point>
+						<Point><X>-70</X><Y>-120</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671707826179</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>850</X><Y>1110</Y>
+					<X>800</X><Y>1110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -736,7 +751,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[releaseDoctor]]></ItemName>
+						<ItemName><![CDATA[releaseDoc]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -746,7 +761,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToExit1]]></ItemName>
+						<ItemName><![CDATA[moveToExit]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -755,13 +770,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>70</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671708058976</Id>
 					<Name><![CDATA[connector17]]></Name>
-					<X>1040</X><Y>760</Y>
+					<X>1000</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -779,7 +794,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToHospital]]></ItemName>
+						<ItemName><![CDATA[moveToHospitalization]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -788,13 +803,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>460</X><Y>-10</Y></Point>
+						<Point><X>420</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671708186326</Id>
 					<Name><![CDATA[connector19]]></Name>
-					<X>1050</X><Y>750</Y>
+					<X>1010</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -821,13 +836,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>-140</Y></Point>
+						<Point><X>40</X><Y>-80</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671708194618</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>1140</X><Y>610</Y>
+					<X>1090</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -845,7 +860,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seizeDoc2]]></ItemName>
+						<ItemName><![CDATA[seizeDocForSurgery]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -860,7 +875,7 @@
 				<Connector>
 					<Id>1671708194619</Id>
 					<Name><![CDATA[connector26]]></Name>
-					<X>1240</X><Y>610</Y>
+					<X>1190</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -868,7 +883,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seizeDoc2]]></ItemName>
+						<ItemName><![CDATA[seizeDocForSurgery]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -893,7 +908,7 @@
 				<Connector>
 					<Id>1671708236446</Id>
 					<Name><![CDATA[connector27]]></Name>
-					<X>1430</X><Y>610</Y>
+					<X>1380</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -911,7 +926,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToHospital]]></ItemName>
+						<ItemName><![CDATA[moveToHospitalization]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -920,13 +935,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>70</X><Y>140</Y></Point>
+						<Point><X>40</X><Y>90</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671708945912</Id>
 					<Name><![CDATA[connector22]]></Name>
-					<X>1260</X><Y>870</Y>
+					<X>1110</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -934,7 +949,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToExit]]></ItemName>
+						<ItemName><![CDATA[moveToExit1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -953,13 +968,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-90</X><Y>0</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671708945913</Id>
 					<Name><![CDATA[connector23]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>1000</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -985,47 +1000,14 @@
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>1130</X><Y>870</Y></Point>
-						<Point><X>1059</X><Y>869</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1671722390751</Id>
-					<Name><![CDATA[connector7]]></Name>
-					<X>160</X><Y>960</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveToWaitingRoom]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seizeDoctor]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Seize]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>90</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671724720007</Id>
 					<Name><![CDATA[connector28]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>10</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1051,15 +1033,14 @@
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>120</X><Y>960</Y></Point>
-						<Point><X>100</X><Y>960</Y></Point>
-						<Point><X>30</X><Y>950</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-90</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671725060758</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>350</X><Y>850</Y>
+					<X>310</X><Y>840</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1067,7 +1048,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sinkPatient1]]></ItemName>
+						<ItemName><![CDATA[sinkEmergencyPatientWaiting]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -1077,7 +1058,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seizeDoctor]]></ItemName>
+						<ItemName><![CDATA[seizeDocForVisit]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -1086,10 +1067,261 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-70</X><Y>100</Y></Point>
+						<Point><X>0</X><Y>80</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671790057398</Id>
+					<Name><![CDATA[connector29]]></Name>
+					<X>230</X><Y>960</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isEmergency]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outT]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[seizeDocForVisit]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Seize]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>-30</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671790060465</Id>
+					<Name><![CDATA[connector30]]></Name>
+					<X>280</X><Y>1030</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[seizeDocForVisit1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Seize]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isEmergency]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>-60</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671790158199</Id>
+					<Name><![CDATA[connector31]]></Name>
+					<X>320</X><Y>1030</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[seizeDocForVisit1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Seize]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>-70</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671793115677</Id>
+					<Name><![CDATA[connector32]]></Name>
+					<X>50</X><Y>960</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[queueNotFull]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveToWaitingRoom]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>-110</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671793473322</Id>
+					<Name><![CDATA[connector34]]></Name>
+					<X>60</X><Y>1050</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[sinkNewPatient]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[queueNotFull]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>-80</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671790057397</Id>
+					<Name><![CDATA[connector7]]></Name>
+					<X>160</X><Y>960</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[animalQueue]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isEmergency]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1671794391344</Id>
+					<Name><![CDATA[connector33]]></Name>
+					<X>120</X><Y>960</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[animalQueue]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[queueNotFull]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outT]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
+			<Connectivity>
+				<TextFile>
+					<Id>1671791729247</Id>
+					<Name><![CDATA[results]]></Name>
+					<X>940</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<FileType>FILE</FileType>
+					<Url><![CDATA[]]></Url>
+					<ResourceReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Results.txt]]></ClassName>
+					</ResourceReference>
+					<FileMode>WRITE_APPEND</FileMode>
+					<CharsetName>null</CharsetName>
+					<Separators></Separators>
+				</TextFile>
+			</Connectivity>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1666865999288</Id>
@@ -1240,8 +1472,8 @@
 				<EmbeddedObject>
 					<Id>1667568424703</Id>
 					<Name><![CDATA[sourceAnimals]]></Name>
-					<X>0</X><Y>940</Y>
-					<Label><X>-5</X><Y>-25</Y></Label>
+					<X>-110</X><Y>840</Y>
+					<Label><X>-25</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1502,7 +1734,7 @@
 				<EmbeddedObject>
 					<Id>1667568692154</Id>
 					<Name><![CDATA[resourceVet]]></Name>
-					<X>460</X><Y>-40</Y>
+					<X>920</X><Y>80</Y>
 					<Label><X>-30</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1554,6 +1786,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyExcessUnits]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[newUnit]]></Name>
@@ -1630,7 +1865,7 @@
 						<Parameter>
 							<Name><![CDATA[homeNodes]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[{ visitRoomSevereNode }]]></Code>
+								<Code><![CDATA[{ vetVisitRoomNode }]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1826,7 +2061,7 @@
 				<EmbeddedObject>
 					<Id>1667568795150</Id>
 					<Name><![CDATA[resourceAssistantVet]]></Name>
-					<X>560</X><Y>-40</Y>
+					<X>1020</X><Y>80</Y>
 					<Label><X>-30</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1878,6 +2113,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyExcessUnits]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[newUnit]]></Name>
@@ -1954,7 +2192,7 @@
 						<Parameter>
 							<Name><![CDATA[homeNodes]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[{ visitRoomRegularNode }]]></Code>
+								<Code><![CDATA[{ assistantVisitRoomNode }]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2149,9 +2387,9 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667569217655</Id>
-					<Name><![CDATA[seizeDoctor]]></Name>
-					<X>250</X><Y>940</Y>
-					<Label><X>-20</X><Y>-15</Y></Label>
+					<Name><![CDATA[seizeDocForVisit]]></Name>
+					<X>280</X><Y>910</Y>
+					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -2177,8 +2415,8 @@
 							<Name><![CDATA[resourceSets]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[{ 
-  { resourceAssistantVet }, 
-  { resourceVet }
+  { resourceVet }, 
+  { resourceAssistantVet }
 }]]></Code>
 							</Value>
 						</Parameter>
@@ -2190,11 +2428,14 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[seizePolicy]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.SEIZE_UNITS_ONE_BY_ONE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[5]]></Code>
+								<Code><![CDATA[1]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2235,12 +2476,12 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[3]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskPreemptionPolicy]]></Name>
@@ -2393,9 +2634,9 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667569653856</Id>
-					<Name><![CDATA[moveToSevereRoom]]></Name>
-					<X>510</X><Y>900</Y>
-					<Label><X>-15</X><Y>-15</Y></Label>
+					<Name><![CDATA[moveToVetRoom]]></Name>
+					<X>460</X><Y>900</Y>
+					<Label><X>-35</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -2423,7 +2664,7 @@
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[visitRoomSevereNode]]></Code>
+								<Code><![CDATA[vetVisitRoomNode]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2556,7 +2797,7 @@
 				<EmbeddedObject>
 					<Id>1667570414653</Id>
 					<Name><![CDATA[delayVisit]]></Name>
-					<X>620</X><Y>960</Y>
+					<X>570</X><Y>960</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2659,7 +2900,7 @@
 				<EmbeddedObject>
 					<Id>1667570497946</Id>
 					<Name><![CDATA[moveToExamRoom]]></Name>
-					<X>840</X><Y>610</Y>
+					<X>800</X><Y>650</Y>
 					<Label><X>-50</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2818,7 +3059,7 @@
 				<EmbeddedObject>
 					<Id>1667570686318</Id>
 					<Name><![CDATA[delayExam]]></Name>
-					<X>940</X><Y>610</Y>
+					<X>900</X><Y>650</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2986,7 +3227,7 @@
 				<EmbeddedObject>
 					<Id>1667923877738</Id>
 					<Name><![CDATA[sinkPatient]]></Name>
-					<X>1070</X><Y>1100</Y>
+					<X>950</X><Y>1100</Y>
 					<Label><X>-21.709</X><Y>-23.98</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3052,7 +3293,7 @@
 				<EmbeddedObject>
 					<Id>1667923967485</Id>
 					<Name><![CDATA[moveToSurgery]]></Name>
-					<X>1100</X><Y>590</Y>
+					<X>1050</X><Y>650</Y>
 					<Label><X>-30</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3211,7 +3452,7 @@
 				<EmbeddedObject>
 					<Id>1667924104369</Id>
 					<Name><![CDATA[releaseVet]]></Name>
-					<X>1390</X><Y>590</Y>
+					<X>1340</X><Y>650</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3321,9 +3562,9 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667924167588</Id>
-					<Name><![CDATA[moveToHospital]]></Name>
-					<X>1500</X><Y>730</Y>
-					<Label><X>-15</X><Y>-15</Y></Label>
+					<Name><![CDATA[moveToHospitalization]]></Name>
+					<X>1420</X><Y>740</Y>
+					<Label><X>-60</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -3480,8 +3721,8 @@
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667924180995</Id>
-					<Name><![CDATA[releaseDoc]]></Name>
-					<X>890</X><Y>850</Y>
+					<Name><![CDATA[releaseDoc1]]></Name>
+					<X>810</X><Y>850</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3516,7 +3757,7 @@
 						<Parameter>
 							<Name><![CDATA[seizeBlocks]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[{ seizeDoc2 }]]></Code>
+								<Code><![CDATA[{ seizeDocForSurgery }]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3592,8 +3833,8 @@
 				<EmbeddedObject>
 					<Id>1667924234612</Id>
 					<Name><![CDATA[delayHosp]]></Name>
-					<X>1020</X><Y>850</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<X>900</X><Y>850</Y>
+					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -3704,8 +3945,8 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667924263144</Id>
-					<Name><![CDATA[moveToExit]]></Name>
-					<X>1260</X><Y>850</Y>
+					<Name><![CDATA[moveToExit1]]></Name>
+					<X>1110</X><Y>850</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3864,7 +4105,7 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				<EmbeddedObject>
 					<Id>1667924279076</Id>
 					<Name><![CDATA[releaseDoc2]]></Name>
-					<X>1360</X><Y>850</Y>
+					<X>1210</X><Y>850</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3971,9 +4212,9 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667924287687</Id>
-					<Name><![CDATA[sinkPatientHome]]></Name>
-					<X>1500</X><Y>860</Y>
-					<Label><X>-32.102</X><Y>-20.748</Y></Label>
+					<Name><![CDATA[sinkPatient1]]></Name>
+					<X>1320</X><Y>860</Y>
+					<Label><X>-30</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -4037,8 +4278,8 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1668674072551</Id>
-					<Name><![CDATA[moveToExit1]]></Name>
-					<X>920</X><Y>1090</Y>
+					<Name><![CDATA[moveToExit]]></Name>
+					<X>850</X><Y>1090</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4199,9 +4440,9 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1668682403357</Id>
-					<Name><![CDATA[seizeDoc2]]></Name>
-					<X>1200</X><Y>590</Y>
-					<Label><X>-15</X><Y>-15</Y></Label>
+					<Name><![CDATA[seizeDocForSurgery]]></Name>
+					<X>1150</X><Y>650</Y>
+					<Label><X>-40</X><Y>-35</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -4301,7 +4542,7 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[4]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4309,9 +4550,6 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskPreemptionPolicy]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[self.PP_SEIZE_ANY_RESOURCE]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[terminatedTaskProcessing]]></Name>
@@ -4369,6 +4607,9 @@ agent.assistant != null ]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[canceledUnitsBehavior]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.CANCELED_UNITS_RETURN_TO_HOME_LOCATION]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[canceledUnitsRelease]]></Name>
@@ -4461,7 +4702,7 @@ agent.assistant != null ]]></Code>
 				<EmbeddedObject>
 					<Id>1668682403372</Id>
 					<Name><![CDATA[delaySurgery]]></Name>
-					<X>1290</X><Y>590</Y>
+					<X>1240</X><Y>650</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4564,7 +4805,7 @@ agent.assistant != null ]]></Code>
 				<EmbeddedObject>
 					<Id>1671703768250</Id>
 					<Name><![CDATA[selectOutput]]></Name>
-					<X>430</X><Y>950</Y>
+					<X>370</X><Y>950</Y>
 					<Label><X>-35</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4659,9 +4900,9 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1671704007278</Id>
-					<Name><![CDATA[moveToRegRoom]]></Name>
-					<X>510</X><Y>1010</Y>
-					<Label><X>-40</X><Y>-15</Y></Label>
+					<Name><![CDATA[moveToAssistantRoom]]></Name>
+					<X>460</X><Y>1010</Y>
+					<Label><X>-50</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -4689,7 +4930,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[visitRoomRegularNode]]></Code>
+								<Code><![CDATA[assistantVisitRoomNode]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4822,7 +5063,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671705439631</Id>
 					<Name><![CDATA[needsExam]]></Name>
-					<X>780</X><Y>740</Y>
+					<X>730</X><Y>730</Y>
 					<Label><X>-35</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4909,7 +5150,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671705522961</Id>
 					<Name><![CDATA[needsSurgery]]></Name>
-					<X>1020</X><Y>740</Y>
+					<X>980</X><Y>740</Y>
 					<Label><X>-35</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4995,9 +5236,9 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1671707564647</Id>
-					<Name><![CDATA[isEmergency]]></Name>
-					<X>730</X><Y>970</Y>
-					<Label><X>-35</X><Y>-25</Y></Label>
+					<Name><![CDATA[isEmergency1]]></Name>
+					<X>670</X><Y>970</Y>
+					<Label><X>-30</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -5082,9 +5323,9 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1671707768597</Id>
-					<Name><![CDATA[releaseDoctor]]></Name>
-					<X>810</X><Y>1090</Y>
-					<Label><X>-10</X><Y>-15</Y></Label>
+					<Name><![CDATA[releaseDoc]]></Name>
+					<X>760</X><Y>1090</Y>
+					<Label><X>-20</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -5191,8 +5432,8 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671708944695</Id>
 					<Name><![CDATA[seizeDocForExit]]></Name>
-					<X>1130</X><Y>850</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<X>1000</X><Y>850</Y>
+					<Label><X>-30</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -5228,6 +5469,9 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[seizePolicy]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.SEIZE_UNITS_ONE_BY_ONE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
@@ -5274,11 +5518,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[1]]></Code>
+								<Code><![CDATA[2]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskPreemptionPolicy]]></Name>
@@ -5419,8 +5666,8 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671724248799</Id>
 					<Name><![CDATA[moveToWaitingRoom]]></Name>
-					<X>120</X><Y>940</Y>
-					<Label><X>-45</X><Y>-15</Y></Label>
+					<X>10</X><Y>830</Y>
+					<Label><X>-40</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -5574,9 +5821,9 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1671725057587</Id>
-					<Name><![CDATA[sinkPatient1]]></Name>
-					<X>350</X><Y>840</Y>
-					<Label><X>-21.709</X><Y>-23.98</Y></Label>
+					<Name><![CDATA[sinkEmergencyPatientWaiting]]></Name>
+					<X>310</X><Y>830</Y>
+					<Label><X>-80</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -5595,11 +5842,619 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[timeoutPatients += 1;]]></Code>
+								<Code><![CDATA[timeoutEmergencyPatient += 1;
+agent.shapeBody.setFillColor(black);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1671790030689</Id>
+					<Name><![CDATA[seizeDocForVisit1]]></Name>
+					<X>280</X><Y>1010</Y>
+					<Label><X>-40</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Seize]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Seize]]></ClassName>
+							<ItemName><![CDATA[1412336243147]]></ItemName>
+						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Animal]]></Code>
+						</GenericParameterSubstituteValue>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[seizeFromOnePool]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceSets]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[{ 
+  { resourceAssistantVet }, 
+  { resourceVet }
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourcePool]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceQuantity]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[seizePolicy]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.SEIZE_UNITS_ONE_BY_ONE]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[1]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maximumCapacity]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[sendResources]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[attachResources]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entityLocationQueue]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[priority]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[1]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[taskPreemptionPolicy]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[terminatedTaskProcessing]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[terminatedTasksEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[suspendResumeEntities]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[customizeResourceChoice]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceChoiceCondition]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceSelectionMode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceRating]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[resourceComparison]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[taskStartBlocks]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableTimeout]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timeout]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[30]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enablePreemption]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[canceledUnitsBehavior]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.CANCELED_UNITS_RETURN_TO_HOME_LOCATION]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[canceledUnitsRelease]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[pushProtocol]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[forceStatisticsCollection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTimeout]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitPreempted]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onSeizeUnit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onPrepareUnit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.shapeBody.setFillColor(black);]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onTaskTerminated]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[comparison]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onTaskSuspended]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onTaskResumed]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1671790053197</Id>
+					<Name><![CDATA[isEmergency]]></Name>
+					<X>200</X><Y>950</Y>
+					<Label><X>-25</X><Y>-40</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput]]></ClassName>
+							<ItemName><![CDATA[1412336242931]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//If the patient is an emergency,
+//if it waits too much it will die
+
+agent.isEmergency == true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1671793398388</Id>
+					<Name><![CDATA[queueNotFull]]></Name>
+					<X>40</X><Y>950</Y>
+					<Label><X>-30</X><Y>-25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput]]></ClassName>
+							<ItemName><![CDATA[1412336242931]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[animalQueue.size()<5]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1671793471419</Id>
+					<Name><![CDATA[sinkNewPatient]]></Name>
+					<X>60</X><Y>1040</Y>
+					<Label><X>-30</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Sink]]></ClassName>
+							<ItemName><![CDATA[1412336242929]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[newPatientsDeclined += 1;]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destroyEntity]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1671794379095</Id>
+					<Name><![CDATA[animalQueue]]></Name>
+					<X>120</X><Y>940</Y>
+					<Label><X>-20</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Queue]]></ClassName>
+							<ItemName><![CDATA[1412336242932]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[5]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maximumCapacity]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entityLocation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queuing]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[priority]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[comparison]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableTimeout]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timeout]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enablePreemption]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[forceStatisticsCollection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTimeout]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitPreempted]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -5660,7 +6515,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Image>
 					<Id>1667323071607</Id>
 					<Name><![CDATA[image]]></Name>
-					<X>20</X><Y>20.739</Y>
+					<X>0</X><Y>0.779</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5668,8 +6523,8 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<Width>620.8810593446284</Width>
-					<Height>692.91929877282</Height>
+					<Width>660.8091017462121</Width>
+					<Height>730.6537300984812</Height>
 					<Rotation>0.0</Rotation>
 					<ImageFiles>
 						<ImageResourceReference>
@@ -5682,7 +6537,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Network>
 					<Id>1667324054909</Id>
 					<Name><![CDATA[network]]></Name>
-					<X>527.6</X><Y>634.819</Y>
+					<X>540.244</X><Y>648.301</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5693,7 +6548,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667324034289</Id>
 					<Name><![CDATA[entryNode]]></Name>
-					<X>498.289</X><Y>766.97</Y>
+					<X>509.047</X><Y>787.648</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5713,7 +6568,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324034289" TargetId="1667324012126">
 					<Id>1667324052202</Id>
 					<Name><![CDATA[toWaitingRoom]]></Name>
-					<X>498.289</X><Y>753.822</Y>
+					<X>509.047</X><Y>773.785</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5731,14 +6586,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-15.633</X><Y>-22.027</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-32.873</Y><Z>0</Z></Point>
-						<Point><X>-73.366</X><Y>-128.26</Y><Z>0</Z></Point>
-						<Point><X>-42.036</X><Y>-116.051</Y><Z>0</Z></Point>
-						<Point><X>-103.548</X><Y>-142.959</Y><Z>0</Z></Point>
-						<Point><X>-100.362</X><Y>-141.407</Y><Z>0</Z></Point>
-						<Point><X>-70.179</X><Y>-126.706</Y><Z>0</Z></Point>
-						<Point><X>-84.729</X><Y>-119.38</Y><Z>0</Z></Point>
+						<Point><X>-16.639</X><Y>-23.226</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-34.663</Y><Z>0</Z></Point>
+						<Point><X>-78.084</X><Y>-135.245</Y><Z>0</Z></Point>
+						<Point><X>-44.74</X><Y>-122.371</Y><Z>0</Z></Point>
+						<Point><X>-110.208</X><Y>-150.744</Y><Z>0</Z></Point>
+						<Point><X>-106.816</X><Y>-149.107</Y><Z>0</Z></Point>
+						<Point><X>-74.693</X><Y>-133.606</Y><Z>0</Z></Point>
+						<Point><X>-90.177</X><Y>-125.881</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5752,7 +6607,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<RectangleNode>
 					<Id>1667324012126</Id>
 					<Name><![CDATA[waitingRoomNode]]></Name>
-					<X>73.99</X><Y>559.82</Y>
+					<X>57.462</X><Y>569.218</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5880,14 +6735,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>323.937944005893</Width>
-					<Height>118.33536411680036</Height>
+					<Width>344.7699661284584</Width>
+					<Height>124.77957440012013</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1667324012126" TargetId="1667324479139">
 					<Id>1667324430316</Id>
 					<Name><![CDATA[path1]]></Name>
-					<X>181.97</X><Y>559.82</Y>
+					<X>172.386</X><Y>569.218</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5905,11 +6760,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-32.873</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-32.873</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-26.298</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>6.575</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-59.166</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-34.663</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-34.663</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-27.73</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>6.933</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-62.388</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5922,8 +6777,8 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</Path>
 				<RectangleNode>
 					<Id>1667324216308</Id>
-					<Name><![CDATA[visitRoomSevereNode]]></Name>
-					<X>46.996</X><Y>349.447</Y>
+					<Name><![CDATA[vetVisitRoomNode]]></Name>
+					<X>28.732</X><Y>347.388</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6038,7 +6893,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					<Sloped>false</Sloped>
 					<Slope>
 						<Id>1667324216306</Id>
-						<Name><![CDATA[visitRoomSevereNode]]></Name>
+						<Name><![CDATA[vetVisitRoomNode]]></Name>
 						<X>0</X><Y>10</Y>
 						<PublicFlag>false</PublicFlag>
 						<PresentationFlag>true</PresentationFlag>
@@ -6051,14 +6906,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>134.9741433357888</Width>
-					<Height>131.48373790755593</Height>
+					<Width>143.6541525535244</Width>
+					<Height>138.643971555689</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<PointNode>
 					<Id>1667324479139</Id>
 					<Name><![CDATA[waitingRoomToTreatment]]></Name>
-					<X>181.97</X><Y>520.378</Y>
+					<X>172.386</X><Y>527.627</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6078,7 +6933,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324479139" TargetId="1667324240280">
 					<Id>1667324476443</Id>
 					<Name><![CDATA[toRegular]]></Name>
-					<X>192.768</X><Y>512.487</Y>
+					<X>183.878</X><Y>519.307</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6096,11 +6951,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-26.995</X><Y>19.723</Y><Z>0</Z></Point>
-						<Point><X>22.801</X><Y>-24.231</Y><Z>0</Z></Point>
-						<Point><X>29.693</X><Y>-31.555</Y><Z>0</Z></Point>
-						<Point><X>6.892</X><Y>-7.324</Y><Z>0</Z></Point>
-						<Point><X>-24.297</X><Y>7.89</Y><Z>0</Z></Point>
+						<Point><X>-28.731</X><Y>20.797</Y><Z>0</Z></Point>
+						<Point><X>24.267</X><Y>-25.55</Y><Z>0</Z></Point>
+						<Point><X>31.603</X><Y>-33.273</Y><Z>0</Z></Point>
+						<Point><X>7.336</X><Y>-7.723</Y><Z>0</Z></Point>
+						<Point><X>-25.859</X><Y>8.32</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6113,8 +6968,8 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				</Path>
 				<RectangleNode>
 					<Id>1667324240280</Id>
-					<Name><![CDATA[visitRoomRegularNode]]></Name>
-					<X>195.467</X><Y>349.447</Y>
+					<Name><![CDATA[assistantVisitRoomNode]]></Name>
+					<X>186.751</X><Y>347.388</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -6229,7 +7084,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					<Sloped>false</Sloped>
 					<Slope>
 						<Id>1667324240278</Id>
-						<Name><![CDATA[visitRoomRegularNode]]></Name>
+						<Name><![CDATA[assistantVisitRoomNode]]></Name>
 						<X>0</X><Y>10</Y>
 						<PublicFlag>false</PublicFlag>
 						<PresentationFlag>true</PresentationFlag>
@@ -6242,14 +7097,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>134.9741433357888</Width>
-					<Height>131.48373790755593</Height>
+					<Width>143.6541525535244</Width>
+					<Height>138.643971555689</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1667324479139" TargetId="1667324216308">
 					<Id>1667324479141</Id>
 					<Name><![CDATA[toSevere]]></Name>
-					<X>172.425</X><Y>511.08</Y>
+					<X>162.227</X><Y>517.823</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6267,11 +7122,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>23.861</X><Y>23.244</Y><Z>0</Z></Point>
-						<Point><X>-16.573</X><Y>-28.632</Y><Z>0</Z></Point>
-						<Point><X>-17.451</X><Y>-30.146</Y><Z>0</Z></Point>
-						<Point><X>-0.879</X><Y>-1.515</Y><Z>0</Z></Point>
-						<Point><X>9.544</X><Y>42.169</Y><Z>0</Z></Point>
+						<Point><X>25.395</X><Y>24.509</Y><Z>0</Z></Point>
+						<Point><X>-17.639</X><Y>-30.191</Y><Z>0</Z></Point>
+						<Point><X>-18.573</X><Y>-31.787</Y><Z>0</Z></Point>
+						<Point><X>-0.935</X><Y>-1.598</Y><Z>0</Z></Point>
+						<Point><X>10.158</X><Y>44.465</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6285,7 +7140,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324216308" TargetId="1667324633282">
 					<Id>1667324611440</Id>
 					<Name><![CDATA[path4]]></Name>
-					<X>168.472</X><Y>349.447</Y>
+					<X>158.02</X><Y>347.388</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6303,11 +7158,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>30.182</X><Y>-14.7</Y><Z>0</Z></Point>
-						<Point><X>7.399</X><Y>-32.071</Y><Z>0</Z></Point>
-						<Point><X>16.34</X><Y>-70.818</Y><Z>0</Z></Point>
-						<Point><X>8.941</X><Y>-38.749</Y><Z>0</Z></Point>
-						<Point><X>42.976</X><Y>-90.998</Y><Z>0</Z></Point>
+						<Point><X>32.122</X><Y>-15.5</Y><Z>0</Z></Point>
+						<Point><X>7.875</X><Y>-33.817</Y><Z>0</Z></Point>
+						<Point><X>17.39</X><Y>-74.674</Y><Z>0</Z></Point>
+						<Point><X>9.515</X><Y>-40.859</Y><Z>0</Z></Point>
+						<Point><X>45.74</X><Y>-95.954</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6321,7 +7176,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<RectangleNode>
 					<Id>1667324098467</Id>
 					<Name><![CDATA[surgeryRoomNode]]></Name>
-					<X>46.996</X><Y>47.036</Y>
+					<X>28.732</X><Y>28.508</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6449,14 +7304,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>134.9741433357888</Width>
-					<Height>144.63211169831155</Height>
+					<Width>143.6541525535244</Width>
+					<Height>152.50836871125793</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<RectangleNode>
 					<Id>1667324279840</Id>
 					<Name><![CDATA[examsRoomNode]]></Name>
-					<X>343.938</X><Y>349.447</Y>
+					<X>344.77</X><Y>347.388</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6584,14 +7439,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>134.9741433357888</Width>
-					<Height>105.18699032604474</Height>
+					<Width>143.6541525535244</Width>
+					<Height>110.91517724455119</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<RectangleNode>
 					<Id>1667324150809</Id>
 					<Name><![CDATA[hospitalizationNode]]></Name>
-					<X>397.929</X><Y>47.036</Y>
+					<X>402.233</X><Y>28.508</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6719,14 +7574,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>215.95862933726207</Width>
-					<Height>170.92885927982272</Height>
+					<Width>229.846644085639</Width>
+					<Height>180.23716302239572</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1667324279840" TargetId="1671722646198">
 					<Id>1667324730782</Id>
 					<Name><![CDATA[examsToSurgery]]></Name>
-					<X>478.912</X><Y>362.596</Y>
+					<X>488.424</X><Y>361.254</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -6744,14 +7599,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>20.246</X><Y>-26.298</Y><Z>0</Z></Point>
-						<Point><X>13.497</X><Y>-65.741</Y><Z>0</Z></Point>
-						<Point><X>44.425</X><Y>-52.593</Y><Z>0</Z></Point>
-						<Point><X>-8.194187796242822</X><Y>-78.17049604723081</Y><Z>0</Z></Point>
-						<Point><X>-149.39912937592317</X><Y>-159.0838272903498</Y><Z>0</Z></Point>
-						<Point><X>-127.70794157968035</X><Y>-146.65433124311897</Y><Z>0</Z></Point>
-						<Point><X>-171.090317172166</X><Y>-171.5133233375806</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>21.548</X><Y>-27.73</Y><Z>0</Z></Point>
+						<Point><X>14.365</X><Y>-69.321</Y><Z>0</Z></Point>
+						<Point><X>47.281</X><Y>-55.457</Y><Z>0</Z></Point>
+						<Point><X>-8.721</X><Y>-82.427</Y><Z>0</Z></Point>
+						<Point><X>-159.007</X><Y>-167.747</Y><Z>0</Z></Point>
+						<Point><X>-135.92</X><Y>-154.641</Y><Z>0</Z></Point>
+						<Point><X>-182.093</X><Y>-180.854</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6765,7 +7620,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324098467" TargetId="1667324150809">
 					<Id>1667325333896</Id>
 					<Name><![CDATA[surgeryToHospitalization]]></Name>
-					<X>181.97</X><Y>125.926</Y>
+					<X>172.386</X><Y>111.695</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6783,11 +7638,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-33.483</X><Y>-4.078</Y><Z>0</Z></Point>
-						<Point><X>33.678</X><Y>2.05</Y><Z>0</Z></Point>
-						<Point><X>215.959</X><Y>13.148</Y><Z>0</Z></Point>
-						<Point><X>182.281</X><Y>11.099</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-13.148</Y><Z>0</Z></Point>
+						<Point><X>-35.637</X><Y>-4.3</Y><Z>0</Z></Point>
+						<Point><X>35.844</X><Y>2.162</Y><Z>0</Z></Point>
+						<Point><X>229.847</X><Y>13.864</Y><Z>0</Z></Point>
+						<Point><X>194.003</X><Y>11.703</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-13.864</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6801,7 +7656,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324150809" TargetId="1667325939758">
 					<Id>1667325701538</Id>
 					<Name><![CDATA[hospitalizationToHome]]></Name>
-					<X>600.389</X><Y>217.964</Y>
+					<X>617.713</X><Y>208.745</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6819,14 +7674,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>18.718</X><Y>-27.349</Y><Z>0</Z></Point>
-						<Point><X>-17.361</X><Y>28.186</Y><Z>0</Z></Point>
-						<Point><X>-40.492</X><Y>65.741</Y><Z>0</Z></Point>
-						<Point><X>-23.131</X><Y>37.556</Y><Z>0</Z></Point>
-						<Point><X>-46.138</X><Y>98.15</Y><Z>0</Z></Point>
-						<Point><X>-98.436</X><Y>398.302</Y><Z>0</Z></Point>
-						<Point><X>-92.789</X><Y>365.894</Y><Z>0</Z></Point>
-						<Point><X>-104.807</X><Y>430.581</Y><Z>0</Z></Point>
+						<Point><X>19.922</X><Y>-28.839</Y><Z>0</Z></Point>
+						<Point><X>-18.477</X><Y>29.721</Y><Z>0</Z></Point>
+						<Point><X>-43.096</X><Y>69.321</Y><Z>0</Z></Point>
+						<Point><X>-24.619</X><Y>39.602</Y><Z>0</Z></Point>
+						<Point><X>-49.106</X><Y>103.495</Y><Z>0</Z></Point>
+						<Point><X>-104.766</X><Y>419.992</Y><Z>0</Z></Point>
+						<Point><X>-98.757</X><Y>385.819</Y><Z>0</Z></Point>
+						<Point><X>-111.547</X><Y>454.029</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6840,7 +7695,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667325859217</Id>
 					<Name><![CDATA[exitNode]]></Name>
-					<X>538.782</X><Y>766.97</Y>
+					<X>552.144</X><Y>787.648</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6860,7 +7715,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324240280" TargetId="1667325939758">
 					<Id>1667325931866</Id>
 					<Name><![CDATA[regularToHome]]></Name>
-					<X>235.959</X><Y>480.932</Y>
+					<X>229.847</X><Y>486.034</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6878,17 +7733,17 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-26.995</X><Y>-19.723</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>32.873</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>39.443</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>6.575</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>39.443</Y><Z>0</Z></Point>
-						<Point><X>175.466</X><Y>39.443</Y><Z>0</Z></Point>
-						<Point><X>141.723</X><Y>39.443</Y><Z>0</Z></Point>
-						<Point><X>195.286</X><Y>66.047</Y><Z>0</Z></Point>
-						<Point><X>246.907</X><Y>135.335</Y><Z>0</Z></Point>
-						<Point><X>227.086</X><Y>108.731</Y><Z>0</Z></Point>
-						<Point><X>261.997</X><Y>164.737</Y><Z>0</Z></Point>
+						<Point><X>-28.731</X><Y>-20.797</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>34.663</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>41.591</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>6.933</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>41.591</Y><Z>0</Z></Point>
+						<Point><X>186.75</X><Y>41.591</Y><Z>0</Z></Point>
+						<Point><X>150.837</X><Y>41.591</Y><Z>0</Z></Point>
+						<Point><X>207.844</X><Y>69.643</Y><Z>0</Z></Point>
+						<Point><X>262.785</X><Y>142.705</Y><Z>0</Z></Point>
+						<Point><X>241.69</X><Y>114.652</Y><Z>0</Z></Point>
+						<Point><X>278.845</X><Y>173.708</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6902,7 +7757,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667386569729" TargetId="1667385340643">
 					<Id>1667385130237</Id>
 					<Name><![CDATA[assistantToSurgery]]></Name>
-					<X>235.959</X><Y>283.705</Y>
+					<X>229.847</X><Y>278.066</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6920,11 +7775,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-0.291</X><Y>-32.869</Y><Z>0</Z></Point>
-						<Point><X>4.184</X><Y>-32.616</Y><Z>0</Z></Point>
-						<Point><X>13.497</X><Y>-105.187</Y><Z>0</Z></Point>
-						<Point><X>9.313</X><Y>-72.569</Y><Z>0</Z></Point>
-						<Point><X>-17.833</X><Y>-117.394</Y><Z>0</Z></Point>
+						<Point><X>-0.309</X><Y>-34.659</Y><Z>0</Z></Point>
+						<Point><X>4.454</X><Y>-34.392</Y><Z>0</Z></Point>
+						<Point><X>14.365</X><Y>-110.915</Y><Z>0</Z></Point>
+						<Point><X>9.911</X><Y>-76.521</Y><Z>0</Z></Point>
+						<Point><X>-18.979</X><Y>-123.787</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6938,7 +7793,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324098467" TargetId="1667324216308">
 					<Id>1667385224271</Id>
 					<Name><![CDATA[toSevereRoom]]></Name>
-					<X>181.97</X><Y>152.222</Y>
+					<X>172.386</X><Y>139.423</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6956,20 +7811,20 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-32.012</X><Y>-10.396</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>13.497</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-20.246</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>45.509</X><Y>10.396</Y><Z>0</Z></Point>
-						<Point><X>26.995</X><Y>52.593</Y><Z>0</Z></Point>
-						<Point><X>42.94</X><Y>23.625</Y><Z>0</Z></Point>
-						<Point><X>8.277</X><Y>79.944</Y><Z>0</Z></Point>
-						<Point><X>-26.995</X><Y>131.484</Y><Z>0</Z></Point>
-						<Point><X>-8.277</X><Y>104.133</Y><Z>0</Z></Point>
-						<Point><X>-33.611</X><Y>163.716</Y><Z>0</Z></Point>
-						<Point><X>-40.492</X><Y>197.224</Y><Z>0</Z></Point>
-						<Point><X>-33.876</X><Y>164.991</Y><Z>0</Z></Point>
-						<Point><X>-1.915</X><Y>30.37</Y><Z>0</Z></Point>
+						<Point><X>-34.07</X><Y>-10.962</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>14.365</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-21.548</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>48.435</X><Y>10.962</Y><Z>0</Z></Point>
+						<Point><X>28.731</X><Y>55.457</Y><Z>0</Z></Point>
+						<Point><X>45.702</X><Y>24.912</Y><Z>0</Z></Point>
+						<Point><X>8.809</X><Y>84.298</Y><Z>0</Z></Point>
+						<Point><X>-28.731</X><Y>138.645</Y><Z>0</Z></Point>
+						<Point><X>-8.809</X><Y>109.804</Y><Z>0</Z></Point>
+						<Point><X>-35.773</X><Y>172.632</Y><Z>0</Z></Point>
+						<Point><X>-43.096</X><Y>207.964</Y><Z>0</Z></Point>
+						<Point><X>-36.054</X><Y>173.976</Y><Z>0</Z></Point>
+						<Point><X>-2.039</X><Y>32.024</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -6983,7 +7838,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667385340643</Id>
 					<Name><![CDATA[toSurgeryNode]]></Name>
-					<X>249.456</X><Y>165.371</Y>
+					<X>244.212</X><Y>153.288</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7003,7 +7858,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667385340643" TargetId="1667324098467">
 					<Id>1667385411812</Id>
 					<Name><![CDATA[toSurgery]]></Name>
-					<X>239.914</X><Y>156.073</Y>
+					<X>234.056</X><Y>143.484</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7021,11 +7876,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-32.873</Y><Z>0</Z></Point>
-						<Point><X>-32.31</X><Y>-9.477</Y><Z>0</Z></Point>
-						<Point><X>-57.943</X><Y>-17</Y><Z>0</Z></Point>
-						<Point><X>-25.634</X><Y>-7.522</Y><Z>0</Z></Point>
-						<Point><X>-17.451</X><Y>29.021</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-34.663</Y><Z>0</Z></Point>
+						<Point><X>-34.388</X><Y>-9.993</Y><Z>0</Z></Point>
+						<Point><X>-61.669</X><Y>-17.926</Y><Z>0</Z></Point>
+						<Point><X>-27.282</X><Y>-7.931</Y><Z>0</Z></Point>
+						<Point><X>-18.573</X><Y>30.602</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7039,7 +7894,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324633282" TargetId="1667385340643">
 					<Id>1667324633284</Id>
 					<Name><![CDATA[fromTreatmenttoSurgery]]></Name>
-					<X>205.011</X><Y>261.261</Y>
+					<X>196.909</X><Y>254.4</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7057,11 +7912,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>32.873</Y><Z>0</Z></Point>
-						<Point><X>12.332</X><Y>-30.597</Y><Z>0</Z></Point>
-						<Point><X>34.903</X><Y>-86.592</Y><Z>0</Z></Point>
-						<Point><X>22.569</X><Y>-55.997</Y><Z>0</Z></Point>
-						<Point><X>45.211</X><Y>99.036</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>34.663</Y><Z>0</Z></Point>
+						<Point><X>13.126</X><Y>-32.263</Y><Z>0</Z></Point>
+						<Point><X>37.147</X><Y>-91.308</Y><Z>0</Z></Point>
+						<Point><X>24.021</X><Y>-59.047</Y><Z>0</Z></Point>
+						<Point><X>48.119</X><Y>104.43</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7075,7 +7930,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324633282" TargetId="1667324279840">
 					<Id>1667324650003</Id>
 					<Name><![CDATA[fromTreatmentToExam]]></Name>
-					<X>208.964</X><Y>270.558</Y>
+					<X>201.116</X><Y>264.203</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7093,14 +7948,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>256.451</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>222.708</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>322.509</X><Y>11.733</Y><Z>0</Z></Point>
-						<Point><X>269.948</X><Y>118.335</Y><Z>0</Z></Point>
-						<Point><X>310.441</X><Y>118.335</Y><Z>0</Z></Point>
-						<Point><X>236.205</X><Y>118.335</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>272.943</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>237.03</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>343.249</X><Y>12.372</Y><Z>0</Z></Point>
+						<Point><X>287.308</X><Y>124.779</Y><Z>0</Z></Point>
+						<Point><X>330.405</X><Y>124.779</Y><Z>0</Z></Point>
+						<Point><X>251.395</X><Y>124.779</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7114,7 +7969,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667324633282</Id>
 					<Name><![CDATA[exitFromSevereRoomNode]]></Name>
-					<X>195.467</X><Y>270.558</Y>
+					<X>186.751</X><Y>264.203</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7134,7 +7989,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324150809" TargetId="1667386723935">
 					<Id>1667385953486</Id>
 					<Name><![CDATA[toRegularRoom]]></Name>
-					<X>397.929</X><Y>165.371</Y>
+					<X>402.233</X><Y>153.288</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7152,14 +8007,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-33.166</X><Y>-6.058</Y><Z>0</Z></Point>
-						<Point><X>-26.35</X><Y>20.533</Y><Z>0</Z></Point>
-						<Point><X>-67.488</X><Y>52.593</Y><Z>0</Z></Point>
-						<Point><X>-41.137</X><Y>32.059</Y><Z>0</Z></Point>
-						<Point><X>-89.701</X><Y>77.339</Y><Z>0</Z></Point>
-						<Point><X>-107.979</X><Y>118.335</Y><Z>0</Z></Point>
-						<Point><X>-92.888</X><Y>88.935</Y><Z>0</Z></Point>
-						<Point><X>-67.488</X><Y>-26.298</Y><Z>0</Z></Point>
+						<Point><X>-35.298</X><Y>-6.388</Y><Z>0</Z></Point>
+						<Point><X>-28.044</X><Y>21.651</Y><Z>0</Z></Point>
+						<Point><X>-71.828</X><Y>55.457</Y><Z>0</Z></Point>
+						<Point><X>-43.783</X><Y>33.805</Y><Z>0</Z></Point>
+						<Point><X>-95.469</X><Y>81.551</Y><Z>0</Z></Point>
+						<Point><X>-114.923</X><Y>124.779</Y><Z>0</Z></Point>
+						<Point><X>-98.862</X><Y>93.778</Y><Z>0</Z></Point>
+						<Point><X>-71.828</X><Y>-27.73</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7173,7 +8028,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667324240280" TargetId="1667386569729">
 					<Id>1667386315064</Id>
 					<Name><![CDATA[toRegularRoom1]]></Name>
-					<X>208.964</X><Y>349.447</Y>
+					<X>201.116</X><Y>347.388</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7191,11 +8046,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>40.492</X><Y>-144.633</Y><Z>0</Z></Point>
-						<Point><X>18.718</X><Y>-27.35</Y><Z>0</Z></Point>
-						<Point><X>26.995</X><Y>-39.443</Y><Z>0</Z></Point>
-						<Point><X>8.277</X><Y>-12.095</Y><Z>0</Z></Point>
-						<Point><X>38.843</X><Y>-70.224</Y><Z>0</Z></Point>
+						<Point><X>43.096</X><Y>-152.509</Y><Z>0</Z></Point>
+						<Point><X>19.922</X><Y>-28.84</Y><Z>0</Z></Point>
+						<Point><X>28.731</X><Y>-41.591</Y><Z>0</Z></Point>
+						<Point><X>8.809</X><Y>-12.754</Y><Z>0</Z></Point>
+						<Point><X>41.341</X><Y>-74.048</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7209,7 +8064,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667325939758" TargetId="1667325859217">
 					<Id>1667325939760</Id>
 					<Name><![CDATA[path8]]></Name>
-					<X>493.439</X><Y>638.674</Y>
+					<X>503.885</X><Y>652.365</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7227,14 +8082,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-2.571</X><Y>-32.777</Y><Z>0</Z></Point>
-						<Point><X>5.132</X><Y>32.488</Y><Z>0</Z></Point>
-						<Point><X>12.469</X><Y>78.929</Y><Z>0</Z></Point>
-						<Point><X>7.336</X><Y>46.439</Y><Z>0</Z></Point>
-						<Point><X>28.535</X><Y>100.51</Y><Z>0</Z></Point>
-						<Point><X>40.177</X><Y>116.15</Y><Z>0</Z></Point>
-						<Point><X>24.111</X><Y>94.568</Y><Z>0</Z></Point>
-						<Point><X>35.232</X><Y>148.665</Y><Z>0</Z></Point>
+						<Point><X>-2.737</X><Y>-34.562</Y><Z>0</Z></Point>
+						<Point><X>5.462</X><Y>34.257</Y><Z>0</Z></Point>
+						<Point><X>13.271</X><Y>83.227</Y><Z>0</Z></Point>
+						<Point><X>7.808</X><Y>48.968</Y><Z>0</Z></Point>
+						<Point><X>30.371</X><Y>105.983</Y><Z>0</Z></Point>
+						<Point><X>42.761</X><Y>122.476</Y><Z>0</Z></Point>
+						<Point><X>25.661</X><Y>99.718</Y><Z>0</Z></Point>
+						<Point><X>37.498</X><Y>156.76</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7248,7 +8103,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667325939758</Id>
 					<Name><![CDATA[node1]]></Name>
-					<X>492.41</X><Y>625.564</Y>
+					<X>502.79</X><Y>638.542</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7268,7 +8123,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667325939758" TargetId="1667386723935">
 					<Id>1667386514866</Id>
 					<Name><![CDATA[fromExitToRegular]]></Name>
-					<X>492.41</X><Y>612.416</Y>
+					<X>502.79</X><Y>624.677</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7286,17 +8141,17 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-32.873</Y><Z>0</Z></Point>
-						<Point><X>3.298</X><Y>-24.781</Y><Z>0</Z></Point>
-						<Point><X>37.59</X><Y>-282.416</Y><Z>0</Z></Point>
-						<Point><X>34.292</X><Y>-257.635</Y><Z>0</Z></Point>
-						<Point><X>21.176</X><Y>-311.136</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-315.562</Y><Z>0</Z></Point>
-						<Point><X>33.743</X><Y>-315.562</Y><Z>0</Z></Point>
-						<Point><X>-33.743</X><Y>-315.562</Y><Z>0</Z></Point>
-						<Point><X>-188.964</X><Y>-315.562</Y><Z>0</Z></Point>
-						<Point><X>-155.22</X><Y>-315.562</Y><Z>0</Z></Point>
-						<Point><X>-222.708</X><Y>-315.562</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-34.663</Y><Z>0</Z></Point>
+						<Point><X>3.51</X><Y>-26.131</Y><Z>0</Z></Point>
+						<Point><X>40.008</X><Y>-297.796</Y><Z>0</Z></Point>
+						<Point><X>36.498</X><Y>-271.665</Y><Z>0</Z></Point>
+						<Point><X>22.538</X><Y>-328.08</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-332.746</Y><Z>0</Z></Point>
+						<Point><X>35.913</X><Y>-332.746</Y><Z>0</Z></Point>
+						<Point><X>-35.913</X><Y>-332.746</Y><Z>0</Z></Point>
+						<Point><X>-201.116</X><Y>-332.746</Y><Z>0</Z></Point>
+						<Point><X>-165.202</X><Y>-332.746</Y><Z>0</Z></Point>
+						<Point><X>-237.03</X><Y>-332.746</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7310,7 +8165,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667386569729</Id>
 					<Name><![CDATA[exitFromRegularRoomNode]]></Name>
-					<X>235.959</X><Y>296.855</Y>
+					<X>229.847</X><Y>291.932</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7330,7 +8185,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667386569729" TargetId="1667324150809">
 					<Id>1667386573524</Id>
 					<Name><![CDATA[pickUpPatient]]></Name>
-					<X>240.698</X><Y>284.543</Y>
+					<X>234.89</X><Y>278.95</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7348,14 +8203,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-11.849</X><Y>30.779</Y><Z>0</Z></Point>
-						<Point><X>13.509</X><Y>-30.122</Y><Z>0</Z></Point>
-						<Point><X>35.753</X><Y>-79.73</Y><Z>0</Z></Point>
-						<Point><X>22.246</X><Y>-49.605</Y><Z>0</Z></Point>
-						<Point><X>48.24</X><Y>-110.265</Y><Z>0</Z></Point>
-						<Point><X>157.23</X><Y>-132.321</Y><Z>0</Z></Point>
-						<Point><X>123.492</X><Y>-132.917</Y><Z>0</Z></Point>
-						<Point><X>190.969</X><Y>-131.725</Y><Z>0</Z></Point>
+						<Point><X>-12.611</X><Y>32.455</Y><Z>0</Z></Point>
+						<Point><X>14.377</X><Y>-31.763</Y><Z>0</Z></Point>
+						<Point><X>38.053</X><Y>-84.072</Y><Z>0</Z></Point>
+						<Point><X>23.676</X><Y>-52.306</Y><Z>0</Z></Point>
+						<Point><X>51.342</X><Y>-116.27</Y><Z>0</Z></Point>
+						<Point><X>167.342</X><Y>-139.527</Y><Z>0</Z></Point>
+						<Point><X>131.434</X><Y>-140.155</Y><Z>0</Z></Point>
+						<Point><X>203.249</X><Y>-138.898</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7369,7 +8224,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1667386723935</Id>
 					<Name><![CDATA[toRegularRoomNode]]></Name>
-					<X>289.949</X><Y>296.855</Y>
+					<X>287.309</X><Y>291.932</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7389,7 +8244,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1667386723935" TargetId="1667324240280">
 					<Id>1667386727876</Id>
 					<Name><![CDATA[path5]]></Name>
-					<X>280.404</X><Y>306.151</Y>
+					<X>277.15</X><Y>301.734</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7407,11 +8262,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>10.671</X><Y>-31.185</Y><Z>0</Z></Point>
-						<Point><X>-23.862</X><Y>23.244</Y><Z>0</Z></Point>
-						<Point><X>-44.446</X><Y>43.296</Y><Z>0</Z></Point>
-						<Point><X>-20.584</X><Y>20.053</Y><Z>0</Z></Point>
-						<Point><X>-63.861</X><Y>1.689</Y><Z>0</Z></Point>
+						<Point><X>11.357</X><Y>-32.884</Y><Z>0</Z></Point>
+						<Point><X>-25.396</X><Y>24.509</Y><Z>0</Z></Point>
+						<Point><X>-47.304</X><Y>45.654</Y><Z>0</Z></Point>
+						<Point><X>-21.908</X><Y>21.145</Y><Z>0</Z></Point>
+						<Point><X>-67.967</X><Y>1.781</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7425,7 +8280,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1671722646198" TargetId="1667385340643">
 					<Id>1671722648270</Id>
 					<Name><![CDATA[examsToSurgery1]]></Name>
-					<X>312.15992038708254</X><Y>193.56857587186556</Y>
+					<X>310.948</X><Y>183.021</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -7443,11 +8298,11 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>21.69118779624282</X><Y>12.429496047230822</Y><Z>0</Z></Point>
-						<Point><X>-21.691187796242822</X><Y>-12.42949604723082</Y><Z>0</Z></Point>
-						<Point><X>-49.20692038708257</X><Y>-28.196575871865537</Y><Z>0</Z></Point>
-						<Point><X>-27.515732590839754</X><Y>-15.767079824634717</Y><Z>0</Z></Point>
-						<Point><X>-77.99792038708256</X><Y>-45.339575871865534</Y><Z>0</Z></Point>
+						<Point><X>23.086</X><Y>13.106</Y><Z>0</Z></Point>
+						<Point><X>-23.086</X><Y>-13.106</Y><Z>0</Z></Point>
+						<Point><X>-52.371</X><Y>-29.733</Y><Z>0</Z></Point>
+						<Point><X>-29.285</X><Y>-16.626</Y><Z>0</Z></Point>
+						<Point><X>-83.014</X><Y>-47.808</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7461,7 +8316,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<PointNode>
 					<Id>1671722646198</Id>
 					<Name><![CDATA[node]]></Name>
-					<X>320.8363955055797</X><Y>198.54037429075788</Y>
+					<X>320.183</X><Y>188.264</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7481,7 +8336,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<Path SourceId="1671722646198" TargetId="1667324150809">
 					<Id>1671722655643</Id>
 					<Name><![CDATA[examsToHosp]]></Name>
-					<X>323.9838768544945</X><Y>189.0486220205902</Y>
+					<X>323.532</X><Y>178.255</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7499,14 +8354,14 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-19.459</X><Y>15.695</Y><Z>0</Z></Point>
-						<Point><X>19.459</X><Y>-15.695</Y><Z>0</Z></Point>
-						<Point><X>36.016</X><Y>-29.049</Y><Z>0</Z></Point>
-						<Point><X>16.557</X><Y>-13.354</Y><Z>0</Z></Point>
-						<Point><X>61.016</X><Y>-29.049</Y><Z>0</Z></Point>
-						<Point><X>73.945</X><Y>-29.049</Y><Z>0</Z></Point>
-						<Point><X>48.945</X><Y>-29.049</Y><Z>0</Z></Point>
-						<Point><X>9.803</X><Y>-29.049</Y><Z>0</Z></Point>
+						<Point><X>-20.711</X><Y>16.55</Y><Z>0</Z></Point>
+						<Point><X>20.711</X><Y>-16.55</Y><Z>0</Z></Point>
+						<Point><X>38.332</X><Y>-30.63</Y><Z>0</Z></Point>
+						<Point><X>17.621</X><Y>-14.081</Y><Z>0</Z></Point>
+						<Point><X>64.94</X><Y>-30.63</Y><Z>0</Z></Point>
+						<Point><X>78.701</X><Y>-30.63</Y><Z>0</Z></Point>
+						<Point><X>52.093</X><Y>-30.63</Y><Z>0</Z></Point>
+						<Point><X>10.433</X><Y>-30.63</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -7524,7 +8379,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1667384642381</Id>
 					<Name><![CDATA[vet_presentation]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>10</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7543,7 +8398,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1667386055716</Id>
 					<Name><![CDATA[assistantVet_presentation]]></Name>
-					<X>10</X><Y>0</Y>
+					<X>20</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7562,7 +8417,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1667923543714</Id>
 					<Name><![CDATA[animal_presentation]]></Name>
-					<X>-10</X><Y>-30</Y>
+					<X>0</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7578,6 +8433,283 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 					<Latitude>0.0</Latitude>
 					<Longitude>0.0</Longitude>
 				</EmbeddedObjectPresentation>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1671790936860</Id>
+					<Name><![CDATA[vetSlider]]></Name>
+					<X>920</X><Y>180</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[4]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[4]]></MaxValue>
+						<Step><![CDATA[1]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>resourceVet.capacity</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1671790993326</Id>
+					<Name><![CDATA[assistantSlider]]></Name>
+					<X>920</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[6]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[6]]></MaxValue>
+						<Step><![CDATA[1]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>resourceAssistantVet.capacity</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1671791661923</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>1040</X><Y>180</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Number of Vets]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1671791690350</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>1040</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Number of Assistants]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+    			<TimePlot>
+					<Id>1671794011917</Id>
+					<Name><![CDATA[plot]]></Name>
+					<X>920</X><Y>320</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1671868800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Queue Capacity]]></Title>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-16744448</Color>
+					<Expression2><![CDATA[animalQueue.size()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+    			<BarChart>
+					<Id>1671794880975</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>700</X><Y>100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1671868800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>200</Width>
+					<Height>200</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>120</Width>
+						<Height>110</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<DataItem>
+					<Id>1671794880976</Id>
+					<Expression><![CDATA[newPatientsDeclined]]></Expression>
+					<Color>-13447886</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[newPatientsDeclined]]></Title>
+					</DataItem>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
+    			<BarChart>
+					<Id>1671794896481</Id>
+					<Name><![CDATA[chart1]]></Name>
+					<X>700</X><Y>320</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1671868800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>220</Width>
+					<Height>200</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>140</Width>
+						<Height>110</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<DataItem>
+					<Id>1671794896482</Id>
+					<Expression><![CDATA[timeoutEmergencyPatient]]></Expression>
+					<Color>-7667573</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[timeoutEmergencyPatient]]></Title>
+					</DataItem>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
 			</Presentation>
 
 				</Level>
@@ -9000,308 +10132,6 @@ _ps13.setFillColor(red);]]></EntryAction>
 			</Presentation>
 
 		</ActiveObjectClass>
-		<!--   =========   Active Object Class   ========  -->
-		<ActiveObjectClass>
-			<Id>1668619774351</Id>
-			<Name><![CDATA[SurgeryRequest]]></Name>
-			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<Generic>false</Generic>
-			<GenericParameter>
-				<Id>1668619774349</Id>
-				<Name><![CDATA[1668619774349]]></Name>
-				<GenericParameterValue Class="CodeValue">
-					<Code><![CDATA[T extends Agent]]></Code>
-				</GenericParameterValue>
-				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
-			</GenericParameter>
-			<FlowChartsUsage>ENTITY</FlowChartsUsage>
-			<SamplesToKeep>100</SamplesToKeep>
-			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
-			<ElementsLimitValue>100</ElementsLimitValue>
-			<MakeDefaultViewArea>true</MakeDefaultViewArea>
-			<SceneGridColor/>
-			<SceneBackgroundColor/>
-			<SceneSkybox>null</SceneSkybox>
-			<AgentProperties>
-	 			<SpaceType>CONTINUOUS</SpaceType>			
-				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
-				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
-				<RotateAnimationVertically>false</RotateAnimationVertically>
-				<VelocityCode Class="CodeUnitValue">
-					<Code><![CDATA[10]]></Code>
-					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-				</VelocityCode>
-				<PhysicalLength Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalLength>
-				<PhysicalWidth Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalWidth>
-				<PhysicalHeight Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-				</PhysicalHeight>
-			</AgentProperties>
-			<EnvironmentProperties>
-					<EnableSteps>false</EnableSteps>
-					<StepDurationCode Class="CodeUnitValue">
-						<Code><![CDATA[1.0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</StepDurationCode>
-					<SpaceType>CONTINUOUS</SpaceType>
-					<WidthCode><![CDATA[500]]></WidthCode>
-					<HeightCode><![CDATA[500]]></HeightCode>
-					<ZHeightCode><![CDATA[0]]></ZHeightCode>
-					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
-					<RowsCountCode><![CDATA[100]]></RowsCountCode>
-					<NeigborhoodType>MOORE</NeigborhoodType>
-					<LayoutType>USER_DEF</LayoutType>
-					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
-					<NetworkType>USER_DEF</NetworkType>
-					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
-					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
-					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
-					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
-					<MCode><![CDATA[10]]></MCode>
-			</EnvironmentProperties>
-			<DatasetsCreationProperties>
-				<AutoCreate>true</AutoCreate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1668672000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</RecurrenceCode>
-			</DatasetsCreationProperties>
-			<ScaleRuler>
-				<Id>1668619774347</Id>
-				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
-				<PublicFlag>false</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
-				<Rotation>0</Rotation>
-				<ScaleType>BASED_ON_LENGTH</ScaleType>
-				<ModelLength>10</ModelLength>
-				<LengthUnits>METER</LengthUnits>
-				<Scale>10</Scale>
-				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
-			</ScaleRuler>
-			<CurrentLevel>1668619774350</CurrentLevel>
-			<ConnectionsId>1668619774346</ConnectionsId>
-			<Variables>
-				<Variable Class="Parameter">
-					<Id>1668619774354</Id>
-					<Name><![CDATA[animal]]></Name>
-					<X>50</X><Y>20</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[Animal]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[null]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>0</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-			</Variables>
-			<AgentLinks>
-				<AgentLink>
-					<Id>1668619774346</Id>
-					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<HandleReceiveInConnections>false</HandleReceiveInConnections>
-					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-					<AgentLinkBidirectional>true</AgentLinkBidirectional>
-					<MessageType><![CDATA[Object]]></MessageType>
-					<LineStyle>SOLID</LineStyle>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineZOrder>UNDER_AGENTS</LineZOrder>
-					<LineArrow>NONE</LineArrow>
-					<LineArrowPosition>END</LineArrowPosition>
-				</AgentLink>
-			</AgentLinks>
-
-
-			<Presentation>
-				<Level>
-					<Id>1668619774350</Id>
-					<Name><![CDATA[level]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
-
-			<Presentation>
-				<Group>
-					<Id>1668619774356</Id>
-					<Name><![CDATA[cloud]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>0</X><Y>0</Y>
-					<Label><X>2.458</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-
-			<Presentation>
-				<Curve ControlPoints="true">
-					<Id>1668619774358</Id>
-					<Name><![CDATA[_ps300]]></Name>
-					<X>-9.831</X><Y>-7.75</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-11702146</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-5383962</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2.703</X><Y>-2.5</Y><Z>0</Z></Point>
-					   <Point><X>5.653</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>5.653</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>5.653</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>6.39</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>11.059</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>15.729</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>16.712</X><Y>1.5</Y><Z>0</Z></Point>
-					   <Point><X>16.712</X><Y>1.5</Y><Z>0</Z></Point>
-					   <Point><X>16.712</X><Y>1.5</Y><Z>0</Z></Point>
-					   <Point><X>20.153</X><Y>-0.5</Y><Z>0</Z></Point>
-					   <Point><X>21.873</X><Y>3</Y><Z>0</Z></Point>
-					   <Point><X>23.839</X><Y>6.5</Y><Z>0</Z></Point>
-					   <Point><X>20.398</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>20.398</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>20.398</X><Y>8</Y><Z>0</Z></Point>
-					   <Point><X>22.856</X><Y>10.5</Y><Z>0</Z></Point>
-					   <Point><X>20.89</X><Y>13.25</Y><Z>0</Z></Point>
-					   <Point><X>18.678</X><Y>16</Y><Z>0</Z></Point>
-					   <Point><X>14.5</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>14.5</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>14.5</X><Y>14</Y><Z>0</Z></Point>
-					   <Point><X>13.271</X><Y>17.5</Y><Z>0</Z></Point>
-					   <Point><X>9.093</X><Y>17.5</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>17.5</Y><Z>0</Z></Point>
-					   <Point><X>4.178</X><Y>13.75</Y><Z>0</Z></Point>
-					   <Point><X>4.178</X><Y>13.75</Y><Z>0</Z></Point>
-					   <Point><X>4.178</X><Y>13.75</Y><Z>0</Z></Point>
-					   <Point><X>1.72</X><Y>15.25</Y><Z>0</Z></Point>
-					   <Point><X>-0.737</X><Y>12.75</Y><Z>0</Z></Point>
-					   <Point><X>-3.686</X><Y>8.75</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>5.75</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>5.75</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>5.75</Y><Z>0</Z></Point>
-					   <Point><X>-2.703</X><Y>2.5</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Curve>
-				<Curve ControlPoints="true">
-					<Id>1668619774360</Id>
-					<Name><![CDATA[_ps301]]></Name>
-					<X>-9.093</X><Y>-6.5</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-1</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2.212</X><Y>-2.5</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>5.898</X><Y>-3.5</Y><Z>0</Z></Point>
-					   <Point><X>10.322</X><Y>-3.5</Y><Z>0</Z></Point>
-					   <Point><X>14.254</X><Y>-3.25</Y><Z>0</Z></Point>
-					   <Point><X>14.746</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>14.746</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>14.746</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>14.254</X><Y>-2.75</Y><Z>0</Z></Point>
-					   <Point><X>10.322</X><Y>-3</Y><Z>0</Z></Point>
-					   <Point><X>6.636</X><Y>-3.25</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>1.25</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>1.25</Y><Z>0</Z></Point>
-					   <Point><X>5.161</X><Y>1.25</Y><Z>0</Z></Point>
-					   <Point><X>2.458</X><Y>-1.25</Y><Z>0</Z></Point>
-					   <Point><X>0.492</X><Y>0.5</Y><Z>0</Z></Point>
-					   <Point><X>-1.229</X><Y>2</Y><Z>0</Z></Point>
-					   <Point><X>0.737</X><Y>4.75</Y><Z>0</Z></Point>
-					   <Point><X>0.737</X><Y>4.75</Y><Z>0</Z></Point>
-					   <Point><X>0.737</X><Y>4.75</Y><Z>0</Z></Point>
-					   <Point><X>-1.966</X><Y>7.25</Y><Z>0</Z></Point>
-					   <Point><X>-0.983</X><Y>10.5</Y><Z>0</Z></Point>
-					   <Point><X>-2.703</X><Y>7.5</Y><Z>0</Z></Point>
-					   <Point><X>0.246</X><Y>4.5</Y><Z>0</Z></Point>
-					   <Point><X>0.246</X><Y>4.5</Y><Z>0</Z></Point>
-					   <Point><X>0.246</X><Y>4.5</Y><Z>0</Z></Point>
-					   <Point><X>-2.212</X><Y>2.5</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Curve>
-			</Presentation>
-
-				</Group>
-			</Presentation>
-
-				</Level>
-			</Presentation>
-
-		</ActiveObjectClass>
 	</ActiveObjectClasses>	
 	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
@@ -9356,7 +10186,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -9394,7 +10224,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
 				<Title><![CDATA[Vet's Clinic : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
-				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<ShowDeveloperPanelOnStart>true</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
@@ -9410,6 +10240,10 @@ _ps13.setFillColor(red);]]></EntryAction>
 	<ModelResources>
 		<Resource>
 			<Path><![CDATA[vet's clinic.jpg]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[Results.txt]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
