@@ -17,6 +17,8 @@
 			<Id>1666865999293</Id>
 			<Name><![CDATA[Main]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<StartupCode><![CDATA[//Stops the event that ends the simulation
+endSimulationEvent.reset();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1666865999291</Id>
@@ -512,7 +514,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[visitSelectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -535,7 +537,7 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[visitSelectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -578,7 +580,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[visitSelectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -1205,7 +1207,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[visitSelectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -1350,6 +1352,72 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Events>
+				<Event>
+					<Id>1671892649261</Id>
+					<Name><![CDATA[endOfShiftEvent]]></Name>
+					<X>780</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="occuresOnce">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1671955200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[720]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[sourceAnimals.set_rate(0.0);	//No more new patients
+endSimulationEvent.restart();]]></Action>
+				</Event>
+				<Event>
+					<Id>1671896573394</Id>
+					<Name><![CDATA[endSimulationEvent]]></Name>
+					<X>960</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="condition" Mode="occuresOnce">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1671955200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[visitSelectOutput.in.count() == sinkPatient.count() + sinkPatient1.count()]]></Condition>
+					</Properties>
+					<Action><![CDATA[getEngine().finish()]]></Action>
+					<Logging>false</Logging>
+				</Event>
+			</Events>
 			<Connectivity>
 				<TextFile>
 					<Id>1671791729247</Id>
@@ -4852,7 +4920,7 @@ agent.assistant != null ]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1671703768250</Id>
-					<Name><![CDATA[selectOutput]]></Name>
+					<Name><![CDATA[visitSelectOutput]]></Name>
 					<X>370</X><Y>950</Y>
 					<Label><X>-35</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -10209,7 +10277,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>2048</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -10269,6 +10337,28 @@ _ps13.setFillColor(red);]]></EntryAction>
 			</Connectivity>
 
 			<Presentation>
+				<Image>
+					<Id>1671891912869</Id>
+					<Name><![CDATA[image]]></Name>
+					<X>20</X><Y>560</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>760</Width>
+					<Height>600</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+							<ClassName><![CDATA[clinic's drawing.jpg]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 				<Text>
 					<Id>1671882036577</Id>
 					<Name><![CDATA[text]]></Name>
@@ -10293,7 +10383,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671882124245</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>731.485</X><Y>204.972</Y>
+					<X>683.948</X><Y>204.972</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10314,7 +10404,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671882124247</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>731.485</X><Y>414.807</Y>
+					<X>683.948</X><Y>414.807</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10336,13 +10426,13 @@ _ps13.setFillColor(red);]]></EntryAction>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671882124260</Id>
 					<Name><![CDATA[vetSlider]]></Name>
-					<X>430</X><Y>170</Y>
+					<X>340</X><Y>170</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="261.28712871287127" Height="110">
+					<BasicProperties Width="298.0881327569376" Height="110">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
 						<ActionCode><![CDATA[results.println();
@@ -10363,13 +10453,13 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671882124262</Id>
 					<Name><![CDATA[assistantSlider]]></Name>
-					<X>430</X><Y>344.862</Y>
+					<X>340</X><Y>380</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="261.28712871287127" Height="155.138">
+					<BasicProperties Width="298.0881327569376" Height="120">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
 						<ActionCode><![CDATA[results.println(String.format("Number of assistants: %d", assistantSlider.getIntValue()));]]></ActionCode>
@@ -10387,7 +10477,7 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 				<Text>
 					<Id>1671883299796</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>430</X><Y>309.89</Y>
+					<X>340</X><Y>309.89</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10401,15 +10491,15 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[vetSlider.getMin()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
 					<Id>1671883299797</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>691.287</X><Y>309.89</Y>
+					<X>638.088</X><Y>309.89</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10423,15 +10513,15 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[vetSlider.getMax()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
 					<Id>1671883299798</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>560.644</X><Y>309.89</Y>
+					<X>489.045</X><Y>309.89</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10445,15 +10535,15 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[vetSlider.getValue()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
 				</Text>
 				<Text>
 					<Id>1671883313699</Id>
 					<Name><![CDATA[text6]]></Name>
-					<X>430</X><Y>519.724</Y>
+					<X>340</X><Y>519.724</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10467,15 +10557,15 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[assistantSlider.getMin()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
 					<Id>1671883313700</Id>
 					<Name><![CDATA[text7]]></Name>
-					<X>691.287</X><Y>519.724</Y>
+					<X>638.088</X><Y>519.724</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10489,15 +10579,15 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[assistantSlider.getMax()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
 					<Id>1671883313703</Id>
 					<Name><![CDATA[text8]]></Name>
-					<X>560.644</X><Y>519.724</Y>
+					<X>489.045</X><Y>519.724</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10511,8 +10601,8 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<TextCode><![CDATA[assistantSlider.getValue()]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
+						<Size>24</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
 				</Text>
@@ -10520,7 +10610,7 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671884096239</Id>
 					<Name><![CDATA[run]]></Name>
-					<X>450.099</X><Y>694.586</Y>
+					<X>800</X><Y>820</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10534,7 +10624,7 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 getExperimentHost().setPresentable( getEngine().getRoot() );]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
-						<Font Name="Dialog" Size="24" Style="0"/>
+						<Font Name="Dialog" Size="24" Style="1"/>
 						<LabelText><![CDATA[Run The Model]]></LabelText>
 					</ExtendedProperties>
 				</Control>
@@ -10579,6 +10669,10 @@ getExperimentHost().setPresentable( getEngine().getRoot() );]]></ActionCode>
 		</Resource>
 		<Resource>
 			<Path><![CDATA[Results.txt]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[clinic's drawing.jpg]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
