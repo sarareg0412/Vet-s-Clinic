@@ -1383,6 +1383,7 @@ endSimulationEvent.reset();]]></StartupCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[sourceAnimals.set_rate(0.0);	//No more new patients
+//Starts the event to stop the simulation when all patients are dismissed
 endSimulationEvent.restart();]]></Action>
 				</Event>
 				<Event>
@@ -1414,7 +1415,20 @@ endSimulationEvent.restart();]]></Action>
 						</RecurrenceCode>
 						<Condition><![CDATA[visitSelectOutput.in.count() == sinkPatient.count() + sinkPatient1.count()]]></Condition>
 					</Properties>
-					<Action><![CDATA[getEngine().finish()]]></Action>
+					<Action><![CDATA[double endTime = time(MINUTE);
+results.println("******NEW EXPERIMENT******");
+results.println(String.format("Time passed after end of shift:%.3f minutes", endTime - 720));
+results.println(String.format("Number of vets: %d", resourceVet.capacity));
+results.println(String.format("Number of assistants: %d", resourceAssistantVet.capacity));
+results.println(String.format("New patients declined: %d", newPatientsDeclined));
+results.println(String.format("Emergency patients timeout: %d", timeoutEmergencyPatient));
+results.println();
+System.out.println(String.format("Time passed after end of shift:%.3f minutes", endTime - 720));
+System.out.println(String.format("Number of vets: %d", resourceVet.capacity));
+System.out.println(String.format("Number of assistants: %d", resourceAssistantVet.capacity));
+System.out.println(String.format("New patients declined: %d", newPatientsDeclined));
+System.out.println(String.format("Emergency patients timeout: %d", timeoutEmergencyPatient));
+getEngine().finish();]]></Action>
 					<Logging>false</Logging>
 				</Event>
 			</Events>
@@ -1422,7 +1436,7 @@ endSimulationEvent.restart();]]></Action>
 				<TextFile>
 					<Id>1671791729247</Id>
 					<Name><![CDATA[results]]></Name>
-					<X>940</X><Y>300</Y>
+					<X>1140</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1434,7 +1448,7 @@ endSimulationEvent.restart();]]></Action>
 						<ClassName><![CDATA[Results.txt]]></ClassName>
 					</ResourceReference>
 					<FileMode>WRITE_APPEND</FileMode>
-					<CharsetName>null</CharsetName>
+					<CharsetName>UTF-8</CharsetName>
 					<Separators></Separators>
 				</TextFile>
 			</Connectivity>
@@ -1850,7 +1864,7 @@ endSimulationEvent.restart();]]></Action>
 				<EmbeddedObject>
 					<Id>1667568692154</Id>
 					<Name><![CDATA[resourceVet]]></Name>
-					<X>920</X><Y>80</Y>
+					<X>920</X><Y>60</Y>
 					<Label><X>-30</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2177,7 +2191,7 @@ endSimulationEvent.restart();]]></Action>
 				<EmbeddedObject>
 					<Id>1667568795150</Id>
 					<Name><![CDATA[resourceAssistantVet]]></Name>
-					<X>1020</X><Y>80</Y>
+					<X>1020</X><Y>60</Y>
 					<Label><X>-30</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5959,8 +5973,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[timeoutEmergencyPatient += 1;
-agent.shapeBody.setFillColor(black);
-results.println(String.format("Emergency patients timeout: %d", timeoutEmergencyPatient));]]></Code>
+agent.shapeBody.setFillColor(black);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6453,8 +6466,7 @@ agent.isEmergency == true]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[newPatientsDeclined += 1;
-results.println(String.format("New patients declined: %d", newPatientsDeclined));]]></Code>
+								<Code><![CDATA[newPatientsDeclined += 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10209,69 +10221,6 @@ _ps13.setFillColor(red);]]></EntryAction>
 	<Experiments>	
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1666865999293">
-			<Id>1666865999295</Id>
-			<Name><![CDATA[Simulation]]></Name>
-			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
-			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
-			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-			<SeedValue>1</SeedValue>
-			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
-			<VmArgs><![CDATA[]]></VmArgs>
-			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
-
-			<Presentation>
-				<Text>
-					<Id>1666865999296</Id>
-					<Name><![CDATA[text]]></Name>
-					<X>50</X><Y>30</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12490271</Color>
-					<Text><![CDATA[Vet's Clinic]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>24</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-			</Presentation>
-
-			<Parameters>			
-				<Parameter>
-					<ParameterName><![CDATA[numberOfVets]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[numberOfAssistants]]></ParameterName>
-				</Parameter>
-			</Parameters>			
-			<PresentationProperties>
-				<EnableZoomAndPanning>true</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Vet's Clinic : Simulation]]></Title>	
-				<EnableDeveloperPanel>true</EnableDeveloperPanel>
-				<ShowDeveloperPanelOnStart>true</ShowDeveloperPanelOnStart>
-				<RealTimeScale>1.0</RealTimeScale>
-			</PresentationProperties>
-			<ModelTimeProperties>
-				<StopOption><![CDATA[Never]]></StopOption>
-				<InitialDate><![CDATA[1666828800000]]></InitialDate>	
-				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1669507200000]]></FinalDate>	
-				<FinalTime><![CDATA[100.0]]></FinalTime>	
-			</ModelTimeProperties>
-			<BypassInitialScreen>true</BypassInitialScreen>
-		</SimulationExperiment>
-		<!--   =========   Simulation Experiment   ========  -->
-		<SimulationExperiment ActiveObjectClassId="1666865999293">
 			<Id>1671882036576</Id>
 			<Name><![CDATA[SimulationSara]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
@@ -10315,26 +10264,6 @@ _ps13.setFillColor(red);]]></EntryAction>
 					</Properties>
 				</Variable>
 			</Variables>
-			<Connectivity>
-				<TextFile>
-					<Id>1671882665180</Id>
-					<Name><![CDATA[results]]></Name>
-					<X>380</X><Y>-20</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<FileType>FILE</FileType>
-					<Url><![CDATA[]]></Url>
-					<ResourceReference>
-						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Results.txt]]></ClassName>
-					</ResourceReference>
-					<FileMode>WRITE_APPEND</FileMode>
-					<CharsetName>null</CharsetName>
-					<Separators></Separators>
-				</TextFile>
-			</Connectivity>
 
 			<Presentation>
 				<Image>
@@ -10432,12 +10361,9 @@ _ps13.setFillColor(red);]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="298.0881327569376" Height="110">
+					<BasicProperties Width="298" Height="110">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[results.println();
-results.println("******NEW EXPERIMENT******");
-results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<DefaultValueCode><![CDATA[4]]></DefaultValueCode>
@@ -10459,10 +10385,9 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="298.0881327569376" Height="120">
+					<BasicProperties Width="298" Height="120">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[results.println(String.format("Number of assistants: %d", assistantSlider.getIntValue()));]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<DefaultValueCode><![CDATA[6]]></DefaultValueCode>
@@ -10616,7 +10541,7 @@ results.println(String.format("Number of vets: %d", vetSlider.getIntValue()));]]
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="241.1881188118812" Height="104.9171270718232">
+					<BasicProperties Width="241" Height="104">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor>-5952982</TextColor>
 						<Enabled>true</Enabled>
