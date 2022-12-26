@@ -1,1 +1,3130 @@
 
+******NEW EXPERIMENT******
+Time passed after end of shift:232.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 19
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:231.000 minutes
+Number of vets: 2
+Number of assistants: 1
+New patients declined: 25
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:282.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 13
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:167.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:305.000 minutes
+Number of vets: 1
+Number of assistants: 1
+New patients declined: 20
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:290.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 10
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:602.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:513.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 10
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:179.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 25
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:119.000 minutes
+Number of vets: 1
+Number of assistants: 1
+New patients declined: 22
+Emergency patients timeout: 9
+
+******NEW EXPERIMENT******
+Time passed after end of shift:209.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:174.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:135.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 27
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:308.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 17
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:478.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 28
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:624.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 26
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:158.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 4
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:194.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:461.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 32
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:267.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:507.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 19
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 21
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:236.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 19
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:201.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:250.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 7
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:79.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:161.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:382.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:228.982 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:146.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:254.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:434.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 16
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:362.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:227.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:246.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 6
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:521.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 29
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:243.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:255.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 4
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:262.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:651.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:222.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:192.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 17
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:178.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:292.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:567.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 7
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:212.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 32
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:376.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:199.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 11
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:271.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 32
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:472.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:198.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 15
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:108.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 1
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:200.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 17
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:172.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:187.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:207.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 15
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:136.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 29
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:677.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:188.937 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:262.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 2
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:181.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 15
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:181.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:209.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:254.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 1
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:214.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:260.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 29
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:188.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 3
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:273.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:130.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 3
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:156.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 4
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:114.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:153.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 20
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:249.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 11
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:179.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 20
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:189.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:358.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 22
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:271.000 minutes
+Number of vets: 1
+Number of assistants: 2
+New patients declined: 42
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:126.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 13
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:286.000 minutes
+Number of vets: 1
+Number of assistants: 2
+New patients declined: 20
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:341.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:229.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 19
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:175.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 8
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:246.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:317.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:197.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:254.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 6
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:534.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 35
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:413.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:462.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 21
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:281.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 25
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:564.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 15
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:188.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:256.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:490.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 16
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:201.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 8
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:486.978 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 25
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:340.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 30
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:776.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 19
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:156.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:210.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 18
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:382.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 21
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:237.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 7
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:203.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 16
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:266.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:139.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 29
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:307.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 11
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:180.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 11
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:99.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:160.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 24
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:190.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:919.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:160.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 1
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:191.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:247.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:409.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:226.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 32
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:285.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:438.960 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 13
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:325.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 23
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:125.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 16
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:333.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 14
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:133.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 29
+Emergency patients timeout: 9
+
+******NEW EXPERIMENT******
+Time passed after end of shift:227.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:326.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 49
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:569.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 45
+Emergency patients timeout: 9
+
+******NEW EXPERIMENT******
+Time passed after end of shift:177.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:221.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:249.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 0
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:566.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:133.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 22
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:71.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 15
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:232.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:165.667 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 21
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:165.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:847.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 31
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:160.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 8
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:130.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 41
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:551.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 19
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:202.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 13
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:204.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:140.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 6
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:330.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:229.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:201.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 15
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:308.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:105.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:52.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 21
+Emergency patients timeout: 9
+
+******NEW EXPERIMENT******
+Time passed after end of shift:75.000 minutes
+Number of vets: 1
+Number of assistants: 2
+New patients declined: 28
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:149.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:283.931 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 16
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:250.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 4
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:280.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 26
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:210.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:139.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 16
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:165.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 13
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:200.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 10
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:145.674 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 5
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:169.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 27
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:257.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:235.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 16
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:208.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 18
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:229.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 29
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:251.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 15
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:170.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:81.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 13
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:285.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 6
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:300.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 27
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:192.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:75.951 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 12
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:214.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 19
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:182.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:172.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 13
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:226.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:217.000 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 34
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:167.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 3
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:149.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:105.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 0
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:176.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 11
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:197.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 22
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:144.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:160.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 6
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:286.000 minutes
+Number of vets: 4
+Number of assistants: 3
+New patients declined: 7
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:309.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 24
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:78.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 16
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:249.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 25
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:312.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 11
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:197.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:238.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 22
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:711.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 11
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:161.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 30
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:195.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:189.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 4
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:643.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 35
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:218.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:485.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 11
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:591.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 19
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:346.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 1
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:167.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:165.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 28
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:125.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 15
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:251.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 39
+Emergency patients timeout: 10
+
+******NEW EXPERIMENT******
+Time passed after end of shift:192.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 9
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:152.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 15
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:160.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 10
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:53.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:420.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 41
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:280.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 27
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:218.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 24
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:324.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 15
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:103.000 minutes
+Number of vets: 2
+Number of assistants: 4
+New patients declined: 30
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:230.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 29
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:203.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 10
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:383.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 17
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:499.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 37
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:88.000 minutes
+Number of vets: 4
+Number of assistants: 2
+New patients declined: 22
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:171.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 9
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:223.991 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 4
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:155.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:261.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 6
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:246.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 4
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:165.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 7
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:186.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 7
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:199.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 11
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:385.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 15
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:157.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 17
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:287.000 minutes
+Number of vets: 1
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:348.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 31
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:250.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 8
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:229.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:224.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 16
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:231.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 5
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:98.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 7
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 12
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:154.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 10
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:272.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 34
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:294.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 20
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:215.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 9
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:347.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 32
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:235.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 29
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:172.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 6
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:258.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 15
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:213.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 27
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:192.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 4
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:261.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 33
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:405.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:276.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 27
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:283.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 6
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:215.000 minutes
+Number of vets: 2
+Number of assistants: 5
+New patients declined: 9
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:274.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 23
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:142.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 12
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:262.000 minutes
+Number of vets: 2
+Number of assistants: 2
+New patients declined: 20
+Emergency patients timeout: 9
+
+******NEW EXPERIMENT******
+Time passed after end of shift:70.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 40
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:103.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:249.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 27
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:247.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 7
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:284.000 minutes
+Number of vets: 2
+Number of assistants: 2
+New patients declined: 17
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:314.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 15
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:203.000 minutes
+Number of vets: 3
+Number of assistants: 3
+New patients declined: 23
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:445.000 minutes
+Number of vets: 2
+Number of assistants: 2
+New patients declined: 22
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:195.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 18
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:48.000 minutes
+Number of vets: 2
+Number of assistants: 2
+New patients declined: 23
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:139.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:269.000 minutes
+Number of vets: 3
+Number of assistants: 1
+New patients declined: 20
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:191.000 minutes
+Number of vets: 1
+Number of assistants: 3
+New patients declined: 25
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:336.000 minutes
+Number of vets: 2
+Number of assistants: 2
+New patients declined: 30
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:372.000 minutes
+Number of vets: 3
+Number of assistants: 1
+New patients declined: 23
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:590.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 13
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:180.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 12
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:305.000 minutes
+Number of vets: 1
+Number of assistants: 1
+New patients declined: 32
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:592.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 29
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:111.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 20
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:519.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:465.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 19
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:280.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 25
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:546.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 33
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:647.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:189.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 21
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:89.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:686.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 38
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:402.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 17
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:212.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:489.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 10
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:472.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 26
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:241.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:477.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:337.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 38
+Emergency patients timeout: 10
+
+******NEW EXPERIMENT******
+Time passed after end of shift:211.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 28
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:512.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 32
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:491.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 26
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:206.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:359.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:376.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 42
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:248.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:602.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:481.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 16
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:228.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 9
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:222.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:653.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 24
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:311.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 33
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:122.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:158.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:224.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 7
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:158.000 minutes
+Number of vets: 2
+Number of assistants: 1
+New patients declined: 40
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:145.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 34
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:163.597 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 21
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:207.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:602.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 22
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:245.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 24
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:75.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 1
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:468.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:290.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:126.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 16
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:379.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 19
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:211.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 22
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:435.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 23
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:178.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 3
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:277.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:536.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 41
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:401.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:202.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 20
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:343.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 18
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:228.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 24
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:290.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 21
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:487.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 21
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:212.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:128.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 47
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:163.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:303.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 21
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:277.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 16
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:131.974 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:214.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 10
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:124.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 21
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:237.742 minutes
+Number of vets: 2
+Number of assistants: 3
+New patients declined: 24
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:383.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 21
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:140.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:213.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 13
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:191.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:128.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 27
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:99.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:169.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 30
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:331.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:190.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 20
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:174.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 1
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:191.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 9
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:128.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:79.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 1
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:356.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 11
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:189.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 3
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:139.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 7
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:157.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 3
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:98.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:226.000 minutes
+Number of vets: 4
+Number of assistants: 5
+New patients declined: 21
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:241.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:105.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 1
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:340.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 11
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:201.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 1
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:216.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:205.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 13
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:278.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:191.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 16
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:207.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 15
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:213.000 minutes
+Number of vets: 3
+Number of assistants: 5
+New patients declined: 20
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:178.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:206.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:157.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 11
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:110.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:233.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 8
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:159.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:231.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:142.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:164.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 17
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:227.000 minutes
+Number of vets: 3
+Number of assistants: 6
+New patients declined: 8
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:217.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 14
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:228.000 minutes
+Number of vets: 4
+Number of assistants: 4
+New patients declined: 12
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:381.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 8
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:290.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 29
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:203.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:452.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 29
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:701.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:238.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:414.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 19
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:523.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 7
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:188.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:710.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 21
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:253.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 11
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:718.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 20
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:146.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:90.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 14
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:425.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 20
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:525.981 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 11
+Emergency patients timeout: 8
+
+******NEW EXPERIMENT******
+Time passed after end of shift:134.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:445.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 35
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:257.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 4
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:178.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 11
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:375.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 20
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:112.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 17
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:537.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 25
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:175.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:423.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 23
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:201.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:607.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 21
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:370.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 9
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:104.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 5
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:224.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 5
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:265.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 16
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:518.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 18
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:202.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:170.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 23
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:428.000 minutes
+Number of vets: 1
+Number of assistants: 6
+New patients declined: 25
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:100.000 minutes
+Number of vets: 4
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:142.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 15
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:216.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 18
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:293.000 minutes
+Number of vets: 4
+Number of assistants: 1
+New patients declined: 7
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:279.000 minutes
+Number of vets: 3
+Number of assistants: 4
+New patients declined: 7
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:464.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 23
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:272.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 25
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:222.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 3
+Emergency patients timeout: 0
+
+******NEW EXPERIMENT******
+Time passed after end of shift:321.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 23
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:456.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 17
+Emergency patients timeout: 7
+
+******NEW EXPERIMENT******
+Time passed after end of shift:430.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 2
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:243.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 32
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:510.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 28
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:481.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:234.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 20
+Emergency patients timeout: 6
+
+******NEW EXPERIMENT******
+Time passed after end of shift:552.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 41
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:261.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 8
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:426.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 6
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:417.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 28
+Emergency patients timeout: 5
+
+******NEW EXPERIMENT******
+Time passed after end of shift:129.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 0
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:145.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 38
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:313.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 2
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:162.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 9
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:232.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 29
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:485.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 42
+Emergency patients timeout: 2
+
+******NEW EXPERIMENT******
+Time passed after end of shift:339.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 12
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:256.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 4
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:396.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 33
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:203.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 27
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:411.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 4
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:335.000 minutes
+Number of vets: 1
+Number of assistants: 4
+New patients declined: 32
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:70.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 11
+Emergency patients timeout: 3
+
+******NEW EXPERIMENT******
+Time passed after end of shift:236.000 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 14
+Emergency patients timeout: 1
+
+******NEW EXPERIMENT******
+Time passed after end of shift:285.000 minutes
+Number of vets: 3
+Number of assistants: 2
+New patients declined: 14
+Emergency patients timeout: 4
+
+******NEW EXPERIMENT******
+Time passed after end of shift:403.923 minutes
+Number of vets: 2
+Number of assistants: 6
+New patients declined: 6
+Emergency patients timeout: 0
+
