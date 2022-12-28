@@ -18,7 +18,7 @@
 			<Name><![CDATA[Main]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<StartupCode><![CDATA[//Stops the event that ends the simulation
-endSimulationEvent.reset();]]></StartupCode>
+stopSimulationEvent.reset();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1666865999291</Id>
@@ -114,7 +114,7 @@ endSimulationEvent.reset();]]></StartupCode>
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1671722761189</Id>
-					<Name><![CDATA[timeoutEmergencyPatient]]></Name>
+					<Name><![CDATA[emergencyPatientsLost]]></Name>
 					<X>920</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -145,7 +145,7 @@ endSimulationEvent.reset();]]></StartupCode>
 				<Variable Class="PlainVariable">
 					<Id>1672048138373</Id>
 					<Name><![CDATA[ENDSHIFTMINUTES]]></Name>
-					<X>760</X><Y>-20</Y>
+					<X>540</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -175,7 +175,7 @@ endSimulationEvent.reset();]]></StartupCode>
 				<Variable Class="PlainVariable">
 					<Id>1672229049423</Id>
 					<Name><![CDATA[MAXWAITINGPATIENTS]]></Name>
-					<X>760</X><Y>-60</Y>
+					<X>540</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -187,10 +187,25 @@ endSimulationEvent.reset();]]></StartupCode>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1672244793768</Id>
+					<Name><![CDATA[MAXTIMEOUTEMERGENCIES]]></Name>
+					<X>540</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[30]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1671883228361</Id>
 					<Name><![CDATA[numberOfVets]]></Name>
-					<X>310</X><Y>-20</Y>
+					<X>310</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -214,7 +229,7 @@ endSimulationEvent.reset();]]></StartupCode>
 				<Variable Class="Parameter">
 					<Id>1671883236878</Id>
 					<Name><![CDATA[numberOfAssistantVets]]></Name>
-					<X>310</X><Y>-60</Y>
+					<X>310</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -413,7 +428,7 @@ endSimulationEvent.reset();]]></StartupCode>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sinkPatient1]]></ItemName>
+						<ItemName><![CDATA[dismissEmergencyPatient]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -483,7 +498,7 @@ endSimulationEvent.reset();]]></StartupCode>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sinkPatient]]></ItemName>
+						<ItemName><![CDATA[dismissRegularPatient]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -1401,7 +1416,7 @@ endSimulationEvent.reset();]]></StartupCode>
 				<Event>
 					<Id>1671892649261</Id>
 					<Name><![CDATA[endOfShiftEvent]]></Name>
-					<X>540</X><Y>-20</Y>
+					<X>800</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1429,12 +1444,12 @@ endSimulationEvent.reset();]]></StartupCode>
 					</Properties>
 					<Action><![CDATA[sourceAnimals.set_rate(0.0);	//No more new patients
 //Starts the event to stop the simulation when all patients are dismissed
-endSimulationEvent.restart();]]></Action>
+stopSimulationEvent.restart();]]></Action>
 				</Event>
 				<Event>
 					<Id>1671896573394</Id>
-					<Name><![CDATA[endSimulationEvent]]></Name>
-					<X>540</X><Y>-60</Y>
+					<Name><![CDATA[stopSimulationEvent]]></Name>
+					<X>800</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1458,7 +1473,7 @@ endSimulationEvent.restart();]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</RecurrenceCode>
-						<Condition><![CDATA[visitSelectOutput.in.count() == sinkPatient.count() + sinkPatient1.count()]]></Condition>
+						<Condition><![CDATA[visitSelectOutput.in.count() == dismissRegularPatient.count() + dismissEmergencyPatient.count()]]></Condition>
 					</Properties>
 					<Action><![CDATA[double endTime = time(MINUTE);
 timeAfterEndShift = endTime - ENDSHIFTMINUTES;
@@ -1488,7 +1503,7 @@ getEngine().stop();]]></Action>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[return timeoutEmergencyPatient + newPatientsDeclined;]]></Body>
+					<Body><![CDATA[return emergencyPatientsLost + newPatientsDeclined;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -1503,30 +1518,6 @@ getEngine().stop();]]></Action>
 					<Body><![CDATA[return timeAfterEndShift - ENDSHIFTMINUTES;]]></Body>
 				</Function>
 			</Functions>
-			<AnalysisData>
-    			<Statistics>
-					<Id>1672229296912</Id>
-					<Name><![CDATA[timePassedAfterEndShift]]></Name>
-					<X>920</X><Y>240</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<AutoUpdate>true</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1672300800000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</RecurrenceCode>
-					<Discrete>true</Discrete>
-					<ValueCode><![CDATA[timeAfterEndShift]]></ValueCode>
-				</Statistics>
-			</AnalysisData>
 			<Connectivity>
 				<TextFile>
 					<Id>1671791729247</Id>
@@ -2759,7 +2750,7 @@ getEngine().stop();]]></Action>
 						<Parameter>
 							<Name><![CDATA[timeout]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[30]]></Code>
+								<Code><![CDATA[MAXTIMEOUTEMERGENCIES]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -3469,7 +3460,7 @@ getEngine().stop();]]></Action>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667923877738</Id>
-					<Name><![CDATA[sinkPatient]]></Name>
+					<Name><![CDATA[dismissRegularPatient]]></Name>
 					<X>950</X><Y>1100</Y>
 					<Label><X>-21.709</X><Y>-23.98</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4455,7 +4446,7 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1667924287687</Id>
-					<Name><![CDATA[sinkPatient1]]></Name>
+					<Name><![CDATA[dismissEmergencyPatient]]></Name>
 					<X>1320</X><Y>860</Y>
 					<Label><X>-30</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -6085,7 +6076,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[timeoutEmergencyPatient += 1;
+								<Code><![CDATA[emergencyPatientsLost += 1;
 agent.shapeBody.setFillColor(black);]]></Code>
 							</Value>
 						</Parameter>
@@ -11262,7 +11253,7 @@ datasetBestFeasibleObjective.reset();
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="126.81331747919145" Height="52.07881569054472">
+					<BasicProperties Width="126" Height="52">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
@@ -11401,6 +11392,9 @@ copyToClipboard( s );]]></ActionCode>
 				<Step Class="CodeValue">
 					<Code><![CDATA[1]]></Code>
 				</Step>
+				<Suggested Class="CodeValue">
+					<Code><![CDATA[4]]></Code>
+				</Suggested>
 			</Parameter>
 			<Parameter>	
 				<Id>1671883236878</Id>
@@ -11414,6 +11408,9 @@ copyToClipboard( s );]]></ActionCode>
 				<Step Class="CodeValue">
 					<Code><![CDATA[1]]></Code>
 				</Step>
+				<Suggested Class="CodeValue">
+					<Code><![CDATA[6]]></Code>
+				</Suggested>
 			</Parameter>
 			<ObjectiveFunctionCode><![CDATA[root.totalLostPatients()]]></ObjectiveFunctionCode>
 			<Objective>MINIMIZE</Objective>
@@ -11432,12 +11429,12 @@ if (bestInfeasibleObjective != Double.POSITIVE_INFINITY) {
 				<Enabled>true</Enabled>
 				<Expression><![CDATA[root.timeAfterEndShift]]></Expression>
 				<Type>LESS_OR_EQUAL</Type>
-				<Bound>300.0</Bound>
+				<Bound>240.0</Bound>
 			</Requirement>
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>10</ReplicationPerIteration>
+				<ReplicationPerIteration>100</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -11450,14 +11447,14 @@ if (bestInfeasibleObjective != Double.POSITIVE_INFINITY) {
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 			</PresentationProperties>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified date]]></StopOption>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1672185600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1672245600000]]></FinalDate>	
 				<FinalTime><![CDATA[1000.0]]></FinalTime>	
 				<StopAfterIterationCount>true</StopAfterIterationCount>
 				<IterationCount>500</IterationCount>
-				<AutomaticStop>true</AutomaticStop>
+				<AutomaticStop>false</AutomaticStop>
 			</ModelTimeProperties>
 		</OptimizationExperiment>	
 	</Experiments>
