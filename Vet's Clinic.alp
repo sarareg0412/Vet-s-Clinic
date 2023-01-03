@@ -616,7 +616,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>-30</Y></Point>
+						<Point><X>-60</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1117,7 +1117,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 				<Connector>
 					<Id>1671724720007</Id>
 					<Name><![CDATA[connector28]]></Name>
-					<X>10</X><Y>850</Y>
+					<X>-10</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1150,7 +1150,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 				<Connector>
 					<Id>1671725060758</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>310</X><Y>840</Y>
+					<X>310</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1177,7 +1177,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>80</Y></Point>
+						<Point><X>0</X><Y>70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1210,13 +1210,13 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>-30</Y></Point>
+						<Point><X>50</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671790060465</Id>
 					<Name><![CDATA[connector30]]></Name>
-					<X>280</X><Y>1030</Y>
+					<X>280</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1243,13 +1243,13 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>-60</Y></Point>
+						<Point><X>-60</X><Y>-50</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671790158199</Id>
 					<Name><![CDATA[connector31]]></Name>
-					<X>320</X><Y>1030</Y>
+					<X>320</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1276,13 +1276,13 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>-70</Y></Point>
+						<Point><X>60</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671793115677</Id>
 					<Name><![CDATA[connector32]]></Name>
-					<X>50</X><Y>960</Y>
+					<X>30</X><Y>960</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1309,13 +1309,13 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>-110</Y></Point>
+						<Point><X>0</X><Y>-90</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1671793473322</Id>
 					<Name><![CDATA[connector34]]></Name>
-					<X>60</X><Y>1050</Y>
+					<X>40</X><Y>1030</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1342,7 +1342,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>-80</Y></Point>
+						<Point><X>0</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1408,7 +1408,7 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-50</X><Y>0</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -1518,11 +1518,86 @@ getEngine().stop();]]></Action>
 					<Body><![CDATA[return timeAfterEndShift - ENDSHIFTMINUTES;]]></Body>
 				</Function>
 			</Functions>
+			<CustomDistributions>
+				<CustomDistribution>
+					<Id>1672755244382</Id>
+					<Name><![CDATA[surgeryTime]]></Name>
+					<X>1180</X><Y>-20</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<InterpolationMethod>NONE</InterpolationMethod>
+					<Type>CONTINUOUS</Type>
+					<DefinitionType>HISTOGRAM</DefinitionType>
+					<Static>false</Static>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<RangesQuery>
+					<TableReference>
+					</TableReference>
+						<StartColumnReference>
+						</StartColumnReference>
+						<EndColumnReference>
+						</EndColumnReference>
+						<NumberOfObservationColumnReference>
+						</NumberOfObservationColumnReference>
+					</RangesQuery>
+					<FrequencyQuery>
+					<TableReference>
+					</TableReference>
+						<ValueColumnReference>
+						</ValueColumnReference>
+						<WeightColumnReference>
+						</WeightColumnReference>
+					</FrequencyQuery>
+					<SampleQuery>
+					<TableReference>
+					</TableReference>
+						<ValueColumnReference>
+						</ValueColumnReference>
+					</SampleQuery>
+					<OptionQuery>
+					<TableReference>
+					</TableReference>
+						<OptionColumnReference>
+						</OptionColumnReference>
+						<NumberOfObservationColumnReference>
+						</NumberOfObservationColumnReference>
+					</OptionQuery>					
+					<Argument><![CDATA[0.0]]></Argument>
+					<Argument><![CDATA[30.0]]></Argument>
+					<Argument><![CDATA[45.0]]></Argument>
+					<Argument><![CDATA[60.0]]></Argument>
+					<Argument><![CDATA[90.0]]></Argument>
+					<Argument><![CDATA[120.0]]></Argument>
+					<Argument><![CDATA[150.0]]></Argument>
+					<Argument><![CDATA[180.0]]></Argument>
+					<Value><![CDATA[5.0]]></Value>
+					<Value><![CDATA[25.0]]></Value>
+					<Value><![CDATA[35.0]]></Value>
+					<Value><![CDATA[15.0]]></Value>
+					<Value><![CDATA[10.0]]></Value>
+					<Value><![CDATA[5.0]]></Value>
+					<Value><![CDATA[5.0]]></Value>
+					<Value><![CDATA[0.0]]></Value>					
+					<OptionListID><![CDATA[0]]></OptionListID>
+					<OptionValues>				
+					</OptionValues>
+					<Argument><![CDATA[0.0]]></Argument>
+					<Argument><![CDATA[30.0]]></Argument>
+					<Argument><![CDATA[45.0]]></Argument>
+					<Argument><![CDATA[60.0]]></Argument>
+					<Argument><![CDATA[90.0]]></Argument>
+					<Argument><![CDATA[120.0]]></Argument>
+					<Argument><![CDATA[150.0]]></Argument>
+					<Argument><![CDATA[180.0]]></Argument>				
+				</CustomDistribution>		
+			</CustomDistributions>
 			<Connectivity>
 				<TextFile>
 					<Id>1671791729247</Id>
 					<Name><![CDATA[results]]></Name>
-					<X>1460</X><Y>-160</Y>
+					<X>1340</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1688,7 +1763,7 @@ getEngine().stop();]]></Action>
 				<EmbeddedObject>
 					<Id>1667568424703</Id>
 					<Name><![CDATA[sourceAnimals]]></Name>
-					<X>-110</X><Y>840</Y>
+					<X>-130</X><Y>860</Y>
 					<Label><X>-25</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2613,7 +2688,7 @@ getEngine().stop();]]></Action>
 				<EmbeddedObject>
 					<Id>1667569217655</Id>
 					<Name><![CDATA[seizeDocForVisit]]></Name>
-					<X>280</X><Y>910</Y>
+					<X>280</X><Y>880</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3045,7 +3120,7 @@ getEngine().stop();]]></Action>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangular(5,15)]]></Code>
+								<Code><![CDATA[normal(5, 15, 10, 5)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -3307,7 +3382,7 @@ getEngine().stop();]]></Action>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangular(30,60)]]></Code>
+								<Code><![CDATA[normal(30,60,45,15)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -4093,7 +4168,7 @@ getEngine().stop();]]></Action>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangular(2,72)]]></Code>
+								<Code><![CDATA[normal(60,180,120,30)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -4123,6 +4198,9 @@ getEngine().stop();]]></Action>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.shapeBody.setFillColor(gold);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -4676,7 +4754,7 @@ agent.shapeBody.setFillColor(lime);]]></Code>
 					<Id>1668682403357</Id>
 					<Name><![CDATA[seizeDocForSurgery]]></Name>
 					<X>1150</X><Y>650</Y>
-					<Label><X>-40</X><Y>-35</Y></Label>
+					<Label><X>-40</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -4959,7 +5037,7 @@ agent.assistant != null ]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangular( 30, 180, 90)]]></Code>
+								<Code><![CDATA[surgeryTime()]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -5323,7 +5401,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.needsExams = true]]></Code>
+								<Code><![CDATA[agent.needsExams == true]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5900,7 +5978,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671724248799</Id>
 					<Name><![CDATA[moveToWaitingRoom]]></Name>
-					<X>10</X><Y>830</Y>
+					<X>-10</X><Y>850</Y>
 					<Label><X>-40</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6056,7 +6134,7 @@ agent.resourceUnitOfPool(resourceAssistantVet) == null]]></Code>
 				<EmbeddedObject>
 					<Id>1671725057587</Id>
 					<Name><![CDATA[sinkEmergencyPatientWaiting]]></Name>
-					<X>310</X><Y>830</Y>
+					<X>310</X><Y>810</Y>
 					<Label><X>-80</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6126,7 +6204,7 @@ agent.shapeBody.setFillColor(black);]]></Code>
 				<EmbeddedObject>
 					<Id>1671790030689</Id>
 					<Name><![CDATA[seizeDocForVisit1]]></Name>
-					<X>280</X><Y>1010</Y>
+					<X>280</X><Y>1000</Y>
 					<Label><X>-40</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6463,7 +6541,7 @@ agent.isEmergency == true]]></Code>
 				<EmbeddedObject>
 					<Id>1671793398388</Id>
 					<Name><![CDATA[queueNotFull]]></Name>
-					<X>40</X><Y>950</Y>
+					<X>20</X><Y>950</Y>
 					<Label><X>-30</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6550,7 +6628,7 @@ agent.isEmergency == true]]></Code>
 				<EmbeddedObject>
 					<Id>1671793471419</Id>
 					<Name><![CDATA[sinkNewPatient]]></Name>
-					<X>60</X><Y>1040</Y>
+					<X>40</X><Y>1020</Y>
 					<Label><X>-30</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8670,7 +8748,7 @@ agent.isEmergency == true]]></Code>
     			<TimePlot>
 					<Id>1671794011917</Id>
 					<Name><![CDATA[plot]]></Name>
-					<X>870</X><Y>280</Y>
+					<X>900</X><Y>300</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8955,17 +9033,17 @@ agent.isEmergency == true]]></Code>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[// The animal is an emergency w/
 // probability 0.5
-isEmergency = randomTrue(0.5);
+isEmergency = bernoulli(0.5) == 1;
 if(isEmergency){
 	shapeBody.setFillColor(red);
 	// An emergency patient may or may
-	// not need surgery or exams
-	needsSurgery = randomTrue(0.5);
-	needsExams = randomTrue(0.5);
+	// not need exams or surgery
+	needsExams = bernoulli(0.5) == 1;
+	needsSurgery = bernoulli(0.5) == 1;
 }else{
 	shapeBody.setFillColor(orange);
 }]]></EntryAction>
-						<FillColor>-23296</FillColor>
+						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="FinalState" ParentState="ROOT_NODE">
@@ -11256,7 +11334,7 @@ datasetBestFeasibleObjective.reset();
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="136.78700361010831" Height="57.298747635181314">
+					<BasicProperties Width="136" Height="57">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
