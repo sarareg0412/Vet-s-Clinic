@@ -173,8 +173,8 @@ stopSimulationEvent.reset();]]></StartupCode>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1672229049423</Id>
-					<Name><![CDATA[MAXWAITINGPATIENTS]]></Name>
+					<Id>1672244793768</Id>
+					<Name><![CDATA[MAXTIMEOUTEMERGENCIES]]></Name>
 					<X>540</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -183,22 +183,22 @@ stopSimulationEvent.reset();]]></StartupCode>
 					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
+							<Code><![CDATA[30]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1672244793768</Id>
-					<Name><![CDATA[MAXTIMEOUTEMERGENCIES]]></Name>
+					<Id>1672842113063</Id>
+					<Name><![CDATA[NEWPATIENTSARRIVALRATE]]></Name>
 					<X>540</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
+						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[30]]></Code>
+							<Code><![CDATA[0.1]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -243,6 +243,30 @@ stopSimulationEvent.reset();]]></StartupCode>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1671883236876</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1672843834868</Id>
+					<Name><![CDATA[maxWaitingPatients]]></Name>
+					<X>310</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1672843834866</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -1477,13 +1501,15 @@ stopSimulationEvent.restart();]]></Action>
 					</Properties>
 					<Action><![CDATA[double endTime = time(MINUTE);
 timeAfterEndShift = endTime - ENDSHIFTMINUTES;
-results.println("******NEW EXPERIMENT******");
-results.println(String.format("Time passed after end of shift:%.3f minutes", endTime - ENDSHIFTMINUTES));
-results.println(String.format("Number of vets: %d", resourceVet.capacity));
-results.println(String.format("Number of assistants: %d", resourceAssistantVet.capacity));
-results.println(String.format("TOT patients lost: %d", totalLostPatients()));
-results.println();
+results.println(String.format("%d;%d;%d;%d;%d;%.3f", 
+								numberOfVets,
+								numberOfAssistantVets,
+								maxWaitingPatients,
+								newPatientsDeclined,
+								emergencyPatientsLost,
+								timeAfterEndShift));
 System.out.println(String.format("Time passed after end of shift:%.3f minutes", endTime - ENDSHIFTMINUTES));
+System.out.println(String.format("Max waiting patients: %d", animalQueue.capacity));
 System.out.println(String.format("Number of vets: %d", resourceVet.capacity));
 System.out.println(String.format("Number of assistants: %d", resourceAssistantVet.capacity));
 System.out.println(String.format("TOT patients lost: %d", totalLostPatients()));
@@ -1595,9 +1621,9 @@ getEngine().stop();]]></Action>
 			</CustomDistributions>
 			<Connectivity>
 				<TextFile>
-					<Id>1671791729247</Id>
+					<Id>1673367072042</Id>
 					<Name><![CDATA[results]]></Name>
-					<X>1340</X><Y>-20</Y>
+					<X>1180</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1606,10 +1632,10 @@ getEngine().stop();]]></Action>
 					<Url><![CDATA[]]></Url>
 					<ResourceReference>
 						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
-						<ClassName><![CDATA[Results.txt]]></ClassName>
+						<ClassName><![CDATA[Results.csv]]></ClassName>
 					</ResourceReference>
 					<FileMode>WRITE_APPEND</FileMode>
-					<CharsetName>UTF-8</CharsetName>
+					<CharsetName>null</CharsetName>
 					<Separators></Separators>
 				</TextFile>
 			</Connectivity>
@@ -1786,7 +1812,7 @@ getEngine().stop();]]></Action>
 						<Parameter>
 							<Name><![CDATA[rate]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[0.1]]></Code>
+								<Code><![CDATA[NEWPATIENTSARRIVALRATE]]></Code>
 								<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -6567,7 +6593,7 @@ agent.isEmergency == true]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[animalQueue.size() < MAXWAITINGPATIENTS ]]></Code>
+								<Code><![CDATA[animalQueue.size() < animalQueue.capacity ]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6717,7 +6743,7 @@ agent.isEmergency == true]]></Code>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[MAXWAITINGPATIENTS]]></Code>
+								<Code><![CDATA[maxWaitingPatients]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10208,12 +10234,16 @@ _ps13.setFillColor(red);]]></EntryAction>
 		<Height>1160</Height>
 	</Frame>
 	<Database>
-		<Logging>true</Logging>
-		<AutoExport>false</AutoExport>
-		<ShutdownCompact>true</ShutdownCompact>
+		<Logging>false</Logging>
+		<AutoExport>true</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
 		<ImportSettings>
 		</ImportSettings>
 		<ExportSettings>
+			<ExportExcelResourceReference>
+				<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+				<ClassName><![CDATA[Results.xlsx]]></ClassName>
+			</ExportExcelResourceReference>
 		</ExportSettings>
 	</Database>
 	
@@ -10248,9 +10278,18 @@ _ps13.setFillColor(red);]]></EntryAction>
 			<Name><![CDATA[SimulationSara]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<InitialSetupCode><![CDATA[results.println("N_VETS;N_ASSISTANTS;MAX_QUEUE;NEW_DECLINED;EMERGENCY_LOST;TIME_AFTER_END_SHIFT");
+iterationsNumber.setText(String.format("%d/365", getEngine().getRunCount()));]]></InitialSetupCode>
 			<MaximumMemory>2048</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<AfterSimulationRunCode><![CDATA[if(getEngine().getRunCount()<=367){
+	iterationsNumber.setText(String.format("%d/365", getEngine().getRunCount()-2));
+	run();
+}else{
+	finishText.setVisible(true);
+	stop();
+}]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
@@ -10286,7 +10325,42 @@ _ps13.setFillColor(red);]]></EntryAction>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1672843921690</Id>
+					<Name><![CDATA[sliderMaxWaitingPatients]]></Name>
+					<X>400</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
+			<Connectivity>
+				<TextFile>
+					<Id>1673368245130</Id>
+					<Name><![CDATA[results]]></Name>
+					<X>640</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<FileType>FILE</FileType>
+					<Url><![CDATA[]]></Url>
+					<ResourceReference>
+						<PackageName><![CDATA[vet_s_clinic]]></PackageName>
+						<ClassName><![CDATA[Results.csv]]></ClassName>
+					</ResourceReference>
+					<FileMode>WRITE</FileMode>
+					<CharsetName>null</CharsetName>
+					<Separators></Separators>
+				</TextFile>
+			</Connectivity>
 
 			<Presentation>
 				<Image>
@@ -10335,7 +10409,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671882124245</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>683.948</X><Y>204.972</Y>
+					<X>439.681</X><Y>272.242</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10356,7 +10430,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671882124247</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>683.948</X><Y>414.807</Y>
+					<X>439.681</X><Y>414.958</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10378,13 +10452,13 @@ _ps13.setFillColor(red);]]></EntryAction>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671882124260</Id>
 					<Name><![CDATA[vetSlider]]></Name>
-					<X>340</X><Y>170</Y>
+					<X>60</X><Y>256.147</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="298" Height="110">
+					<BasicProperties Width="331.5440687530193" Height="88.09545228791244">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
 					</BasicProperties>
@@ -10402,13 +10476,13 @@ _ps13.setFillColor(red);]]></EntryAction>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671882124262</Id>
 					<Name><![CDATA[assistantSlider]]></Name>
-					<X>340</X><Y>380</Y>
+					<X>60</X><Y>392.295</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="298" Height="120">
+					<BasicProperties Width="331.5440687530193" Height="96.10412976863175">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<Enabled>true</Enabled>
 					</BasicProperties>
@@ -10425,7 +10499,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883299796</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>340</X><Y>309.89</Y>
+					<X>60</X><Y>352.163</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10447,7 +10521,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883299797</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>638.088</X><Y>309.89</Y>
+					<X>391.642</X><Y>352.163</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10469,7 +10543,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883299798</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>489.045</X><Y>309.89</Y>
+					<X>225.822</X><Y>352.163</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10491,7 +10565,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883313699</Id>
 					<Name><![CDATA[text6]]></Name>
-					<X>340</X><Y>519.724</Y>
+					<X>60</X><Y>496.187</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10513,7 +10587,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883313700</Id>
 					<Name><![CDATA[text7]]></Name>
-					<X>638.088</X><Y>519.724</Y>
+					<X>391.642</X><Y>496.187</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10535,7 +10609,7 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Text>
 					<Id>1671883313703</Id>
 					<Name><![CDATA[text8]]></Name>
-					<X>489.045</X><Y>519.724</Y>
+					<X>225.822</X><Y>496.187</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10557,8 +10631,8 @@ _ps13.setFillColor(red);]]></EntryAction>
 				<Control Type="Button">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1671884096239</Id>
-					<Name><![CDATA[run]]></Name>
-					<X>800</X><Y>820</Y>
+					<Name><![CDATA[runButton]]></Name>
+					<X>1000</X><Y>260</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10568,7 +10642,13 @@ _ps13.setFillColor(red);]]></EntryAction>
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor>-5952982</TextColor>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[run();
+						<ActionCode><![CDATA[//Disables every button
+maxWaitingPatientsSlider.setEnabled(false);
+vetSlider.setEnabled(false);
+assistantSlider.setEnabled(false);
+runButton.setEnabled(false);
+//Run the experiment
+run();
 getExperimentHost().setPresentable( getEngine().getRoot() );]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
@@ -10576,6 +10656,198 @@ getExperimentHost().setPresentable( getEngine().getRoot() );]]></ActionCode>
 						<LabelText><![CDATA[Run The Model]]></LabelText>
 					</ExtendedProperties>
 				</Control>
+				<Text>
+					<Id>1672843898963</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>439.681</X><Y>149.249</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Select the max number of waiting patients]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1672843898967</Id>
+					<Name><![CDATA[maxWaitingPatientsSlider]]></Name>
+					<X>60</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="331.5440687530193" Height="96.10412976863175">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[6]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[2]]></MinValue>
+						<MaxValue><![CDATA[5]]></MaxValue>
+						<Step><![CDATA[1]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>sliderMaxWaitingPatients</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1672843951332</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>60</X><Y>216.104</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[min]]></Text>
+					<TextCode><![CDATA[maxWaitingPatientsSlider.getMin()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1672843951334</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>391.545</X><Y>216.104</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[max]]></Text>
+					<TextCode><![CDATA[maxWaitingPatientsSlider.getMax()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1672843951336</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>225.772</X><Y>216.104</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[value]]></Text>
+					<TextCode><![CDATA[maxWaitingPatientsSlider.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Group>
+					<Id>1673432206096</Id>
+					<Name><![CDATA[group]]></Name>
+					<X>1040</X><Y>760</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Text>
+					<Id>1673432154166</Id>
+					<Name><![CDATA[text13]]></Name>
+					<X>-160</X><Y>-20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Current iteration:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>28</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1673432189567</Id>
+					<Name><![CDATA[iterationsNumber]]></Name>
+					<X>120</X><Y>-20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>28</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Group>
+				<Text>
+					<Id>1673432832924</Id>
+					<Name><![CDATA[finishText]]></Name>
+					<X>880</X><Y>820</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Done. Please restart the experiment
+if you want to collect new data.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>28</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 			<Parameters>			
@@ -10591,14 +10863,20 @@ getExperimentHost().setPresentable( getEngine().getRoot() );]]></ActionCode>
 						<Code><![CDATA[sliderVetNumber]]></Code>
 					</ParameterValue>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxWaitingPatients]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sliderMaxWaitingPatients]]></Code>
+					</ParameterValue>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<ExecutionMode><![CDATA[virtualTime]]></ExecutionMode>
 				<Title><![CDATA[Vet's Clinic : Simulation_Sara]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>1.0</RealTimeScale>
+				<RealTimeScale>5.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Never]]></StopOption>
@@ -10628,7 +10906,7 @@ datasetBestFeasibleObjective.reset();
 			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1672325081205</Id>
+					<Id>1672844352493</Id>
 					<Name><![CDATA[bestInfeasibleObjective]]></Name>
 					<X>-350</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10645,7 +10923,7 @@ datasetBestFeasibleObjective.reset();
 			</Variables>
 			<AnalysisData>
     			<DataSet>
-					<Id>1672325081203</Id>
+					<Id>1672844352491</Id>
 					<Name><![CDATA[datasetCurrentObjective]]></Name>
 					<X>-350</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10654,7 +10932,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>true</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1672387200000</OccurrenceDate>
+					<OccurrenceDate>1672905600000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -10668,7 +10946,7 @@ datasetBestFeasibleObjective.reset();
 					<SamplesToKeep>500</SamplesToKeep>
 				</DataSet>
     			<DataSet>
-					<Id>1672325081204</Id>
+					<Id>1672844352492</Id>
 					<Name><![CDATA[datasetBestInfeasibleObjective]]></Name>
 					<X>-350</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10677,7 +10955,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1672387200000</OccurrenceDate>
+					<OccurrenceDate>1672905600000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -10691,7 +10969,7 @@ datasetBestFeasibleObjective.reset();
 					<SamplesToKeep>500</SamplesToKeep>
 				</DataSet>
     			<DataSet>
-					<Id>1672325081206</Id>
+					<Id>1672844352494</Id>
 					<Name><![CDATA[datasetBestFeasibleObjective]]></Name>
 					<X>-350</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10700,7 +10978,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1672387200000</OccurrenceDate>
+					<OccurrenceDate>1672905600000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -10717,7 +10995,7 @@ datasetBestFeasibleObjective.reset();
 
 			<Presentation>
 				<Text>
-					<Id>1672325081174</Id>
+					<Id>1672844352459</Id>
 					<Name><![CDATA[text]]></Name>
 					<X>40</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10738,9 +11016,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081175</Id>
+					<Id>1672844352460</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>345.011</X><Y>102.393</Y>
+					<X>354.714</X><Y>104.577</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10759,9 +11037,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081176</Id>
+					<Id>1672844352461</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>481.798</X><Y>102.393</Y>
+					<X>495.825</X><Y>104.577</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10780,9 +11058,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Line>
-					<Id>1672325081177</Id>
+					<Id>1672844352462</Id>
 					<Name><![CDATA[line]]></Name>
-					<X>41.04</X><Y>159.691</Y>
+					<X>41.136</X><Y>165.738</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10799,14 +11077,14 @@ datasetBestFeasibleObjective.reset();
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>470</Dx>
+					<Dx>485</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Text>
-					<Id>1672325081178</Id>
+					<Id>1672844352463</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>56.238</X><Y>188.341</Y>
+					<X>56.815</X><Y>196.318</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10825,9 +11103,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081179</Id>
+					<Id>1672844352464</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>345.011</X><Y>188.341</Y>
+					<X>354.714</X><Y>196.318</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10848,9 +11126,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081180</Id>
+					<Id>1672844352465</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>345.011</X><Y>214.125</Y>
+					<X>354.714</X><Y>223.84</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10870,9 +11148,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081181</Id>
+					<Id>1672844352466</Id>
 					<Name><![CDATA[text6]]></Name>
-					<X>481.798</X><Y>188.341</Y>
+					<X>495.825</X><Y>196.318</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10893,9 +11171,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081182</Id>
+					<Id>1672844352467</Id>
 					<Name><![CDATA[text7]]></Name>
-					<X>481.798</X><Y>214.125</Y>
+					<X>495.825</X><Y>223.84</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10915,9 +11193,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Rectangle>
-					<Id>1672325081183</Id>
+					<Id>1672844352468</Id>
 					<Name><![CDATA[rectangle]]></Name>
-					<X>41.04</X><Y>245.639</Y>
+					<X>41.136</X><Y>257.479</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10930,16 +11208,16 @@ datasetBestFeasibleObjective.reset();
 					<LineColor/>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>471.1552346570398</Width>
-					<Height>85.94812145277196</Height>
+					<Width>486.0467019096256</Width>
+					<Height>91.74013382397435</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-657931</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1672325081184</Id>
+					<Id>1672844352469</Id>
 					<Name><![CDATA[text8]]></Name>
-					<X>56.238</X><Y>274.289</Y>
+					<X>56.815</X><Y>288.058</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10958,9 +11236,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081185</Id>
+					<Id>1672844352470</Id>
 					<Name><![CDATA[text9]]></Name>
-					<X>345.011</X><Y>274.289</Y>
+					<X>354.714</X><Y>288.058</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10981,9 +11259,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081186</Id>
+					<Id>1672844352471</Id>
 					<Name><![CDATA[text10]]></Name>
-					<X>481.798</X><Y>274.289</Y>
+					<X>495.825</X><Y>288.058</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11004,9 +11282,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081187</Id>
+					<Id>1672844352472</Id>
 					<Name><![CDATA[text11]]></Name>
-					<X>56.238</X><Y>360.237</Y>
+					<X>56.815</X><Y>379.798</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11025,9 +11303,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081188</Id>
+					<Id>1672844352473</Id>
 					<Name><![CDATA[text12]]></Name>
-					<X>345.011</X><Y>360.237</Y>
+					<X>354.714</X><Y>379.798</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11048,9 +11326,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081189</Id>
+					<Id>1672844352474</Id>
 					<Name><![CDATA[text13]]></Name>
-					<X>481.798</X><Y>360.237</Y>
+					<X>495.825</X><Y>379.798</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11071,9 +11349,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Line>
-					<Id>1672325081190</Id>
+					<Id>1672844352475</Id>
 					<Name><![CDATA[line1]]></Name>
-					<X>155.029</X><Y>360.237</Y>
+					<X>158.728</X><Y>379.798</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11091,13 +11369,13 @@ datasetBestFeasibleObjective.reset();
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
 					<Dx>0</Dx>
-					<Dy>42</Dy>
+					<Dy>45</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Polyline>
-					<Id>1672325081191</Id>
+					<Id>1672844352476</Id>
 					<Name><![CDATA[polyline]]></Name>
-					<X>147.43</X><Y>388.886</Y>
+					<X>150.888</X><Y>410.379</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11118,15 +11396,15 @@ datasetBestFeasibleObjective.reset();
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>7.6</X><Y>14.325</Y><Z>0</Z></Point>
-					   <Point><X>15.198</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>7.839</X><Y>15.29</Y><Z>0</Z></Point>
+					   <Point><X>15.679</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>false</Closed>
 				</Polyline>
 				<Text>
-					<Id>1672325081192</Id>
+					<Id>1672844352477</Id>
 					<Name><![CDATA[text14]]></Name>
-					<X>56.238</X><Y>474.835</Y>
+					<X>56.815</X><Y>502.118</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11145,9 +11423,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Line>
-					<Id>1672325081194</Id>
+					<Id>1672844352479</Id>
 					<Name><![CDATA[line2]]></Name>
-					<X>41.04</X><Y>532.133</Y>
+					<X>41.136</X><Y>563.279</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11164,14 +11442,14 @@ datasetBestFeasibleObjective.reset();
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>470</Dx>
+					<Dx>485</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Text>
-					<Id>1672325081195</Id>
+					<Id>1672844352480</Id>
 					<Name><![CDATA[text15]]></Name>
-					<X>56.238</X><Y>560.783</Y>
+					<X>56.815</X><Y>593.859</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11190,9 +11468,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081196</Id>
+					<Id>1672844352481</Id>
 					<Name><![CDATA[text16]]></Name>
-					<X>345.011</X><Y>560.783</Y>
+					<X>354.714</X><Y>593.859</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11213,9 +11491,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081197</Id>
+					<Id>1672844352482</Id>
 					<Name><![CDATA[text17]]></Name>
-					<X>481.798</X><Y>560.783</Y>
+					<X>495.825</X><Y>593.859</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11236,9 +11514,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Rectangle>
-					<Id>1672325081198</Id>
+					<Id>1672844352483</Id>
 					<Name><![CDATA[rectangle1]]></Name>
-					<X>41.04</X><Y>618.081</Y>
+					<X>41.136</X><Y>655.018</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11251,16 +11529,16 @@ datasetBestFeasibleObjective.reset();
 					<LineColor/>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>471.1552346570398</Width>
-					<Height>85.94812145277196</Height>
+					<Width>486.0467019096256</Width>
+					<Height>91.74013382397435</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-657931</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1672325081199</Id>
+					<Id>1672844352484</Id>
 					<Name><![CDATA[text18]]></Name>
-					<X>56.238</X><Y>646.73</Y>
+					<X>56.815</X><Y>685.599</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11279,9 +11557,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081200</Id>
+					<Id>1672844352485</Id>
 					<Name><![CDATA[text19]]></Name>
-					<X>345.011</X><Y>646.73</Y>
+					<X>354.714</X><Y>685.599</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11302,9 +11580,9 @@ datasetBestFeasibleObjective.reset();
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1672325081201</Id>
+					<Id>1672844352486</Id>
 					<Name><![CDATA[text20]]></Name>
-					<X>481.798</X><Y>646.73</Y>
+					<X>495.825</X><Y>685.599</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11324,17 +11602,84 @@ datasetBestFeasibleObjective.reset();
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
-				<Control Type="Button">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1672325081193</Id>
-					<Name><![CDATA[button]]></Name>
-					<X>367.809</X><Y>460.509</Y>
+				<Text>
+					<Id>1672844352487</Id>
+					<Name><![CDATA[text21]]></Name>
+					<X>56.815</X><Y>777.339</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="136" Height="57">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[maxWaitingPatients]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1672844352488</Id>
+					<Name><![CDATA[text22]]></Name>
+					<X>354.714</X><Y>777.339</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( maxWaitingPatients )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1672844352489</Id>
+					<Name><![CDATA[text23]]></Name>
+					<X>495.825</X><Y>777.339</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getBestIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( getBestParamValue( _oqvar_maxWaitingPatients ) )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1672844352478</Id>
+					<Name><![CDATA[button]]></Name>
+					<X>378.233</X><Y>486.829</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="141" Height="61">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
@@ -11342,6 +11687,7 @@ datasetBestFeasibleObjective.reset();
 						<ActionCode><![CDATA[String s = "";
 s += "numberOfVets\t" + format( getBestParamValue( _oqvar_numberOfVets ) ) + "\n";
 s += "numberOfAssistantVets\t" + format( getBestParamValue( _oqvar_numberOfAssistantVets ) ) + "\n";
+s += "maxWaitingPatients\t" + format( getBestParamValue( _oqvar_maxWaitingPatients ) ) + "\n";
 
 copyToClipboard( s );]]></ActionCode>
 					</BasicProperties>
@@ -11351,9 +11697,9 @@ copyToClipboard( s );]]></ActionCode>
 					</ExtendedProperties>
 				</Control>
 				<Line>
-					<Id>1672325081202</Id>
+					<Id>1672844352490</Id>
 					<Name><![CDATA[line3]]></Name>
-					<X>360.209</X><Y>73.744</Y>
+					<X>370.393</X><Y>73.998</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11371,13 +11717,13 @@ copyToClipboard( s );]]></ActionCode>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
 					<Dx>0</Dx>
-					<Dy>630</Dy>
+					<Dy>763</Dy>
 					<Dz>0</Dz>
 				</Line>
     			<Plot>
-					<Id>1672325081207</Id>
+					<Id>1672844352495</Id>
 					<Name><![CDATA[plot]]></Name>
-					<X>542.592</X><Y>102.393</Y>
+					<X>558.54</X><Y>104.577</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11385,7 +11731,7 @@ copyToClipboard( s );]]></ActionCode>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1672387200000</OccurrenceDate>
+					<OccurrenceDate>1672905600000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -11395,15 +11741,15 @@ copyToClipboard( s );]]></ActionCode>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>759.9277978339351</Width>
-					<Height>859.4812145277197</Height>
+					<Width>783.9462934026219</Width>
+					<Height>917.4013382397434</Height>
 					<BackgroundColor/>
 					<BorderColor/>
 					<ChartArea>
 						<XOffset>80</XOffset>
 						<YOffset>20</YOffset>
-						<Width>659.9277978339351</Width>
-						<Height>759.4812145277197</Height>
+						<Width>683.9462934026219</Width>
+						<Height>817.4013382397434</Height>
 						<BackgroundColor>-1</BackgroundColor>
 						<BorderColor>-9868951</BorderColor>
 						<GridColor>-12566464</GridColor>
@@ -11426,7 +11772,7 @@ copyToClipboard( s );]]></ActionCode>
 					<Interpolation>LINEAR</Interpolation>
 					<DatasetExpression>  
 						<Title><![CDATA[Current]]></Title>
-					<Id>1672325081208</Id>
+					<Id>1672844352496</Id>
 					<Expression><![CDATA[datasetCurrentObjective]]></Expression>
 					<Color>-4144960</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -11436,7 +11782,7 @@ copyToClipboard( s );]]></ActionCode>
 					</DatasetExpression>
 					<DatasetExpression>  
 						<Title><![CDATA[Best infeasible]]></Title>
-					<Id>1672325081209</Id>
+					<Id>1672844352497</Id>
 					<Expression><![CDATA[datasetBestInfeasibleObjective]]></Expression>
 					<Color>-4194304</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -11446,7 +11792,7 @@ copyToClipboard( s );]]></ActionCode>
 					</DatasetExpression>
 					<DatasetExpression>  
 						<Title><![CDATA[Best feasible]]></Title>
-					<Id>1672325081210</Id>
+					<Id>1672844352498</Id>
 					<Expression><![CDATA[datasetBestFeasibleObjective]]></Expression>
 					<Color>-16777088</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -11492,6 +11838,19 @@ copyToClipboard( s );]]></ActionCode>
 				<Suggested Class="CodeValue">
 					<Code><![CDATA[6]]></Code>
 				</Suggested>
+			</Parameter>
+			<Parameter>	
+				<Id>1672843834868</Id>
+				<Type>DISCRETE</Type>
+				<Min Class="CodeValue">
+					<Code><![CDATA[2]]></Code>
+				</Min>
+				<Max Class="CodeValue">
+					<Code><![CDATA[5]]></Code>
+				</Max>
+				<Step Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Step>
 			</Parameter>
 			<ObjectiveFunctionCode><![CDATA[root.totalLostPatients()]]></ObjectiveFunctionCode>
 			<Objective>MINIMIZE</Objective>
@@ -11545,11 +11904,15 @@ if (bestInfeasibleObjective != Double.POSITIVE_INFINITY) {
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 		<Resource>
-			<Path><![CDATA[Results.txt]]></Path>
+			<Path><![CDATA[clinic's drawing.jpg]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 		<Resource>
-			<Path><![CDATA[clinic's drawing.jpg]]></Path>
+			<Path><![CDATA[Results.xlsx]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[Results.csv]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
